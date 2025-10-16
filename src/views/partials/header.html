@@ -2,14 +2,14 @@
 <div class="flex flex-wrap items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-y-2">
     <!-- Logo -->
     <a href="/" class="flex items-center">
-      <img srcset="@images/svg/logo.svg" alt="FeelShop Logo" class="h-6 mr-1" />
-      <span class="text-[20px] font-semibold text-[#243A8B] leading-none">
+      <img srcset="@images/logo.svg" alt="FeelShop Logo" class="h-6 w-[94px] mr-1" />
+      <!-- <span class="text-[20px] font-semibold text-[#243A8B] leading-none">
         SHOP
-      </span>
+      </span> -->
     </a>
 
     <!-- Ô tìm kiếm -->
-    <div class="relative flex-1 max-w-[640px] mx-10">
+    <div class="relative hidden lg:flex flex-1 max-w-[640px] mx-10">
       <input
         id="searchInput"
         type="text"
@@ -17,7 +17,7 @@
         class="w-full rounded-full bg-[#F8F8F8] border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1"
       />
       <img
-        srcset="@images/svg/icon-search.svg"
+        srcset="@images/icon-search.svg"
         alt="Search"
         class="absolute left-3 top-[10px] w-5 h-5 opacity-70"
       />
@@ -148,10 +148,11 @@
 
     <!-- Nhóm icon -->
     <div class="flex items-center space-x-5 text-[#243A8B]">
+    
       <!-- Đơn hàng -->
       <div class="relative">
         <img
-          srcset="@images/svg/icon-order.svg"
+          srcset="@images/icon-order.svg"
           alt="Orders"
           class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
         />
@@ -163,14 +164,14 @@
 
       <!-- Người dùng -->
       <img
-        srcset="@images/svg/icon-user.svg"
+        srcset="@images/icon-user.svg"
         alt="User"
         class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
       />
 
       <!-- Tin nhắn -->
       <img
-        srcset="@images/svg/icon-message.svg"
+        srcset="@images/icon-message.svg"
         alt="Messages"
         class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
       />
@@ -178,7 +179,7 @@
       <!-- Giỏ hàng -->
       <div class="relative">
         <img
-          srcset="@images/svg/icon-cart.svg"
+          srcset="@images/icon-cart.svg"
           alt="Cart"
           class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
         />
@@ -189,18 +190,28 @@
       </div>
 
       <!-- Ngôn ngữ -->
-      <div class="flex items-center space-x-0.5 cursor-pointer">
+      <div class="hidden lg:flex items-centers space-x-0.5 cursor-pointer">
         <img
-          srcset="@images/svg/icon-globe.svg"
+          srcset="@images/icon-globe.svg"
           alt="Language"
           class="w-6 h-6 hover:opacity-80 transition"
         />
         <img
-          srcset="@images/svg/icon-down_arrow.svg"
+          srcset="@images/icon-down_arrow.svg"
           alt="Language"
           class="w-5 h-5 hover:opacity-80 transition mt-[1px]"
         />
       </div>
+
+        <!-- Mobile hamburger button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden flex justify-center items-center w-8 h-8 focus:outline-none rounded"
+        aria-label="Toggle mobile menu"
+      >
+        <img id="hamburger-icon" srcset="@images/icon-hambuger.svg" alt="Open menu" class="w-6 h-6">
+        <img id="close-icon" srcset="@images/icon-close.svg" alt="Close menu" class="w-6 h-6 hidden">
+      </button>
     </div>
 
 
