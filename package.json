@@ -10,7 +10,8 @@
   "scripts": {
     "clean": "rm -rf dist/* statics/*",
     "start": "webpack serve --open",
-    "build": "NODE_ENV=production webpack --config webpack.config.js"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "wbuild": "set NODE_ENV=production && webpack --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
