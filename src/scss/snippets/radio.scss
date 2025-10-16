@@ -1,0 +1,54 @@
+.c-radio {
+    position: relative;
+    --radio-color: rgba(35,0,78,.2);
+    --radio-checked-color: #FF8B00;
+
+    input[type="radio"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+
+        &:checked ~ label {
+            --radio-color: #FF8B00;
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        padding-left: var(--radio-padding-left, 30px);
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            
+            border-radius: 99999px;
+        }
+
+        &:before {
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: var(--radio-color, #000);
+        }
+
+        &:after {
+            left: 5px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+
+            background-color: var(--radio-checked-color, #000);
+
+            opacity: 0;
+            transition: opacity .3s;
+        }
+    }
+}

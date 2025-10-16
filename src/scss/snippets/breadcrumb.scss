@@ -1,0 +1,65 @@
+.rank-math-breadcrumb {
+	display: flex;
+	font-size: 14px;
+	line-height: 160%;
+	color: #231F20;
+
+	.separator {
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+
+	a {
+		@media (min-width: 1025px) {
+			transition: color .2s;
+		}
+
+		&:hover {
+			@media (min-width: 1025px) {
+				color: var(--secondary-color);
+			}
+		}
+	}
+}
+
+common-navigation {
+	display: block;
+	padding-top: 40px;
+	@media (min-width: 768px) {
+		padding-top: 60px;
+	}
+	@media (min-width: 1280px) {
+		padding-top: 80px;
+	}
+
+	&.w-center {
+		.rank-math-breadcrumb {
+			justify-content: center;
+		}
+	}
+
+	&.w-mobile-center {
+		.rank-math-breadcrumb {
+			@media (max-width: 767px) {
+				justify-content: center;
+			}
+		}
+	}
+
+	&.w-960px {
+		.inner {
+			max-width: 1000px;
+		}
+	}
+
+	&+* {
+		padding-top: 0;
+		margin-top: 8px;
+		@media (min-width: 768px) {
+			margin-top: 12px;
+		}
+		@media (min-width: 1280px) {
+			margin-top: 16px;
+		}
+	}
+}

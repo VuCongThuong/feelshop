@@ -1,0 +1,34 @@
+.park-map-popup {
+    transition: opacity .3s, visibility .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.park-map-popup.on {
+    opacity: 1;
+    visibility: visible;
+}
+
+.park-map-popup .c-btn {
+    --btn-padding-top: 12px;
+    --btn-padding-bottom: 12px;
+    --btn-min-width: 0;
+}
+
+.position-button {
+    transition: transform .3s;
+    transform-origin: bottom;
+}
+
+.position-button.on {
+    transform: scale(1.2);
+    @media (min-width: 768px) {
+        transform: scale(1.4);
+    }
+    @media (min-width: 1024px) {
+        transform: scale(1.6);
+    }
+    @media (min-width: 1280px) {
+        transform: scale(1.8);
+    }
+}

@@ -1,0 +1,28 @@
+[data-tab-content] {
+	display: none;
+	&.on {
+		display: block;
+	}
+}
+
+[data-tab-element] {
+	&.w-support {
+		color: #2563EB;
+		opacity: 0.6;
+		&.on {
+			opacity: 1;
+			background-color: #fff;
+		}
+	}
+
+	&.w-service {
+		transition: background-color .28s, color .2s;
+		
+		&.on {
+			background-color: #2D2F33;
+			color: white;
+		}
+	}
+
+	
+}

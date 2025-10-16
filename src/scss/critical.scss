@@ -1,0 +1,23 @@
+@use "sass:color";
+
+@tailwind base;
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@import "./common/iconmoon-critical";
+@import "./common/fonts-critical";
+@import "./common/base-critical";
+@import "./common/common-critical";
+@import "./common/typography-critical";
+@import "./common/link-critical";
+
+@import "./components/animate";
+
+@import "./components/header";
+@import "./snippets/swiper";
+@import "./snippets/breadcrumb";
+
+@import "./components/common-hero-banner";
+@import "./components/common-price";
+

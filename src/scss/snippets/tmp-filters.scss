@@ -1,0 +1,58 @@
+[ data-filter-popup-element] {
+	&.w-events {
+
+	}
+}
+
+[data-filter-popup-content] {
+	&.w-default-filter {
+		opacity: 0;
+		visibility: hidden;
+		transition: visibility .3s, opacity .3s;
+
+		&.on {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.clear-filters {
+		border: 1px solid #E5E7EB;
+		font-size: 14px;
+    line-height: 20px;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 99999px;
+
+    svg {
+    	width: 12px;
+    	height: auto;
+    }
+	}
+
+	.filter-button {
+		border: 1px solid #F5ECF9;
+		background-color: #F5ECF9;
+		font-size: 14px;
+    line-height: 20px;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 99999px;
+    text-transform: capitalize;
+
+    svg {
+    	width: 12px;
+    	height: auto;
+    }
+	}
+
+	.is-child {
+		padding-bottom: 16px;
+	}
+}

@@ -1,0 +1,29 @@
+.skip-to-content {
+    display: block;
+    background-color: green;
+    color: white;
+    margin: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: transform .3s ease-out;
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    outline: none !important;
+
+    &:focus {
+        clip: auto;
+        position: fixed;
+        padding: 10px;
+        z-index: 9999;
+        width: auto;
+        height: auto;
+        transform: none;
+        text-decoration: underline;
+    }
+}

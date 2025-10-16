@@ -1,0 +1,148 @@
+<header class="w-full bg-white border-b shadow-sm relative z-10">
+  <div class="flex items-center justify-center px-8 py-3">
+    <!-- Menu desktop -->
+    <nav class="flex flex-wrap justify-center gap-16 text-sm font-medium text-gray-700">
+      <!-- Electronics -->
+      <div class="group relative">
+        <button class="flex items-center hover:text-[#243A8B]">
+          Electronics
+          <svg
+            class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Submenu tổng (hiện khi hover Electronics ở trên) -->
+        <div
+          class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:flex bg-white border shadow-lg rounded-lg z-50 animate-fadeDown"
+        >
+          <div class="absolute top-0 left-0 w-full h-[3px] rounded-t-lg"></div>
+
+          <!-- Cột trái -->
+          <ul class="w-56 p-2 pt-4">
+            <li>
+              <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100"
+                >Fashion</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100"
+                >Luxury</a
+              >
+            </li>
+
+            <!-- Electronics có submenu riêng -->
+            <li class="relative group/item">
+              <a
+                href="#"
+                class="flex justify-between items-center px-3 py-2 rounded hover:bg-gray-100 text-[#243A8B] bg-indigo-50"
+              >
+                Electronics
+                <svg
+                  class="w-4 h-4 ml-1 text-gray-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+
+              <!-- Submenu bên phải (hiện khi hover dòng Electronics bên trái) -->
+              <ul
+                class="absolute hidden group-hover/item:block left-full top-0 w-48 bg-white border shadow-lg rounded-lg p-2 animate-slideIn"
+              >
+                <li>
+                  <a href="#" class="block px-3 py-2 hover:bg-gray-100">TV</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-3 py-2 hover:bg-gray-100"
+                    >Gaming</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block px-3 py-2 hover:bg-gray-100"
+                    >Audio</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block px-3 py-2 hover:bg-gray-100"
+                    >Phone</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Services</a>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Cars</a>
+            </li>
+            <li>
+              <a href="#" class="block px-3 py-2 hover:bg-gray-100"
+                >Property</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Các menu khác -->
+      <a href="#" class="hover:text-[#243A8B]">Laptop</a>
+      <a href="#" class="hover:text-[#243A8B]">Headphone</a>
+      <a href="#" class="hover:text-[#243A8B]">Watch</a>
+      <a href="#" class="hover:text-[#243A8B]">TV</a>
+      <a href="#" class="hover:text-[#243A8B]">Cars</a>
+      <a href="#" class="hover:text-[#243A8B]">Camera</a>
+      <a href="#" class="hover:text-[#243A8B]">Keyboard</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CSS hiệu ứng -->
+<style>
+  /* hiệu ứng fade nhẹ xuống */
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  .animate-fadeDown {
+    animation: fadeDown 0.25s ease-out;
+  }
+
+  /* hiệu ứng trượt cột phải */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-slideIn {
+    animation: slideIn 0.25s ease-out;
+  }
+</style>

@@ -1,0 +1,286 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  color: #0f172a;
+  font-weight: 400;
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.text-large {
+  font-size: 16px;
+  line-height: 160%;
+  @media (min-width: 1025px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+.text-small {
+  font-size: 12x;
+  line-height: 160%;
+  @media (min-width: 1025px) {
+    font-size: 14px;
+  }
+}
+
+.c-subtitle {
+  display: inline-flex;
+  text-align: center;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 16px;
+  color: #2d2f33;
+  text-transform: uppercase;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 99999px;
+  background-color: #bffb4f;
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+}
+
+h1,
+.h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+
+  @media (min-width: 1024px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 44px;
+  }
+
+  @media (min-width: 1360px) {
+    font-size: 56px;
+    line-height: 1.21428571429;
+  }
+
+  span {
+    display: block;
+    color: #2563eb;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+
+  @media (min-width: 1024px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 44px;
+  }
+
+  @media (min-width: 1360px) {
+    font-size: 56px;
+    line-height: 1.21428571429;
+  }
+
+  span {
+    color: #bffb4f;
+  }
+
+  &.w-small {
+    font-size: 24px;
+    line-height: 140%;
+
+    @media (min-width: 768px) {
+      font-size: 26px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 28px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 32px;
+    }
+  }
+}
+
+h3,
+.h3 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 800;
+
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 56px;
+    line-height: 68px;
+  }
+
+  @media (min-width: 1360px) {
+    font-size: 56px;
+    line-height: 68px;
+  }
+}
+
+h4,
+.h4 {
+}
+
+.w-span {
+  span {
+    color: #fe346e;
+  }
+}
+
+.text-20-bold {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.text-12-regular {
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.text-28-bold {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.text-16-regular {
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.text-24-bold {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.text-16-bold {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.text-32-extra-bold {
+  font-size: 28px;
+  line-height: 52px;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.text-20-16-bold {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.text-20-16-semibold {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.text-24-20-extra-bold {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-weight: 800;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

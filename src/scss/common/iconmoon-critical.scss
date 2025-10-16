@@ -1,0 +1,82 @@
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-arrow-down:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-checked:before {
+  content: "\e902";
+}
+.icon-checked-op2:before {
+  content: "\e903";
+}
+.icon-close:before {
+  content: "\e904";
+}
+.icon-email:before {
+  content: "\e905";
+}
+.icon-eye:before {
+  content: "\e906";
+}
+.icon-eye-off:before {
+  content: "\e907";
+}
+.icon-facebook:before {
+  content: "\e908";
+}
+.icon-heart:before {
+  content: "\e909";
+}
+.icon-heart_op2:before {
+  content: "\e90a";
+}
+.icon-instagram:before {
+  content: "\e90b";
+}
+.icon-link:before {
+  content: "\e90c";
+}
+.icon-linkedin:before {
+  content: "\e90d";
+}
+.icon-notification:before {
+  content: "\e90e";
+}
+.icon-next:before {
+  content: "\e90f";
+}
+.icon-phone:before {
+  content: "\e910";
+}
+.icon-pinterest:before {
+  content: "\e911";
+}
+.icon-prev:before {
+  content: "\e912";
+}
+.icon-search:before {
+  content: "\e913";
+}
+.icon-x:before {
+  content: "\e914";
+}

@@ -1,0 +1,225 @@
+<header class="w-full bg-white">
+<div class="flex flex-wrap items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-y-2">
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img srcset="@images/svg/logo.svg" alt="FeelShop Logo" class="h-6 mr-1" />
+      <span class="text-[20px] font-semibold text-[#243A8B] leading-none">
+        SHOP
+      </span>
+    </a>
+
+    <!-- Ô tìm kiếm -->
+    <div class="relative flex-1 max-w-[640px] mx-10">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search for an item..."
+        class="w-full rounded-full bg-[#F8F8F8] border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1"
+      />
+      <img
+        srcset="@images/svg/icon-search.svg"
+        alt="Search"
+        class="absolute left-3 top-[10px] w-5 h-5 opacity-70"
+      />
+
+      <!-- Dropdown gợi ý -->
+      <div
+        id="searchDropdown"
+        class="hidden absolute top-[44px] left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-[420px] overflow-y-auto"
+      >
+        <!-- Viền chấm xanh -->
+        <div class="border-t border-dotted border-blue-300"></div>
+
+        <!-- Danh mục -->
+        <div class="px-4 py-2 text-[13px] text-gray-500">
+          <p class="mt-1">
+            <span class="text-gray-400">Category</span><br />
+            <span class="font-semibold text-gray-800">iPhone</span>
+          </p>
+          <p class="mt-1">
+            <span class="text-gray-400">Category</span><br />
+            <span class="font-semibold text-gray-800">iPhone 15</span>
+          </p>
+          <p class="mt-1">
+            <span class="text-gray-400">Category</span><br />
+            <span class="font-semibold text-gray-800">iPhone 14</span>
+          </p>
+          <p class="mt-1 mb-2 border-b pb-2">
+            <span class="text-gray-400">Category</span><br />
+            <span class="font-semibold text-gray-800">iPhone 13</span>
+          </p>
+        </div>
+
+        <!-- Sản phẩm -->
+        <div class="divide-y">
+          <!-- Item -->
+          <div
+            class="flex items-start px-4 py-2 hover:bg-gray-50 cursor-pointer"
+          >
+            <div class="w-[60px] h-[60px] bg-gray-200 rounded mr-3"></div>
+            <div class="flex-1">
+              <p class="font-semibold text-sm text-gray-800">
+                iPhone 14 Pro Max - 256GB - Deep Purple
+              </p>
+              <div class="flex items-center space-x-2 mt-1">
+                <span
+                  class="flex items-center gap-1 bg-red-100 text-red-600 text-[10px] px-1.5 py-0.5 rounded"
+                >
+                  🔥 Sales
+                </span>
+                <span
+                  class="bg-emerald-100 text-emerald-600 text-[10px] px-1.5 py-0.5 rounded"
+                  >In-Stock</span
+                >
+              </div>
+              <p class="text-xs text-gray-500 mt-1">SKU : 6542808</p>
+            </div>
+            <div class="text-right">
+              <p class="text-[12px] text-gray-400 line-through">25,739,000₫</p>
+              <p class="text-[15px] text-[#243A8B] font-semibold">
+                24,999,000₫
+              </p>
+            </div>
+          </div>
+
+          <!-- Item khác -->
+          <div
+            class="flex items-start px-4 py-2 hover:bg-gray-50 cursor-pointer"
+          >
+            <div class="w-[60px] h-[60px] bg-gray-200 rounded mr-3"></div>
+            <div class="flex-1">
+              <p class="font-semibold text-sm text-gray-800">
+                iPhone 15 Pro Max - Deep Purple
+              </p>
+              <div class="flex items-center space-x-2 mt-1">
+                <span
+                  class="bg-emerald-100 text-emerald-600 text-[10px] px-1.5 py-0.5 rounded"
+                  >In-Stock</span
+                >
+              </div>
+              <p class="text-xs text-gray-500 mt-1">SKU : 6427</p>
+            </div>
+            <div class="text-right">
+              <p class="text-[15px] text-[#243A8B] font-semibold">
+                22,999,000 – 24,999,000₫
+              </p>
+            </div>
+          </div>
+
+          <!-- iPhone X -->
+          <div
+            class="flex items-start px-4 py-2 hover:bg-gray-50 cursor-pointer bg-gray-50"
+          >
+            <div class="w-[60px] h-[60px] bg-gray-200 rounded mr-3"></div>
+            <div class="flex-1">
+              <p class="font-semibold text-sm text-gray-800">
+                iPhone X Glass Screen Protector
+              </p>
+              <div class="flex items-center space-x-2 mt-1">
+                <span
+                  class="flex items-center gap-1 bg-red-100 text-red-600 text-[10px] px-1.5 py-0.5 rounded"
+                  >🔥 Sales</span
+                >
+                <span
+                  class="bg-emerald-100 text-emerald-600 text-[10px] px-1.5 py-0.5 rounded"
+                  >In-Stock</span
+                >
+              </div>
+              <p class="text-xs text-gray-500 mt-1">SKU : 09754</p>
+            </div>
+            <div class="text-right">
+              <p class="text-[12px] text-gray-400 line-through">139,000₫</p>
+              <p class="text-[15px] text-[#243A8B] font-semibold">99,000₫</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- View all -->
+        <div class="text-center py-3 border-t">
+          <a
+            href="/search?q=iphone"
+            class="text-[#243A8B] font-semibold text-sm hover:underline"
+          >
+            View All Results →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nhóm icon -->
+    <div class="flex items-center space-x-5 text-[#243A8B]">
+      <!-- Đơn hàng -->
+      <div class="relative">
+        <img
+          srcset="@images/svg/icon-order.svg"
+          alt="Orders"
+          class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
+        />
+        <span
+          class="absolute -top-1 -right-2 bg-red-600 text-white text-[10px] font-semibold rounded-full px-[4px]"
+          >10</span
+        >
+      </div>
+
+      <!-- Người dùng -->
+      <img
+        srcset="@images/svg/icon-user.svg"
+        alt="User"
+        class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
+      />
+
+      <!-- Tin nhắn -->
+      <img
+        srcset="@images/svg/icon-message.svg"
+        alt="Messages"
+        class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
+      />
+
+      <!-- Giỏ hàng -->
+      <div class="relative">
+        <img
+          srcset="@images/svg/icon-cart.svg"
+          alt="Cart"
+          class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
+        />
+        <span
+          class="absolute -top-1 -right-2 bg-blue-600 text-white text-[10px] font-semibold rounded-full px-[4px]"
+          >10</span
+        >
+      </div>
+
+      <!-- Ngôn ngữ -->
+      <div class="flex items-center space-x-0.5 cursor-pointer">
+        <img
+          srcset="@images/svg/icon-globe.svg"
+          alt="Language"
+          class="w-6 h-6 hover:opacity-80 transition"
+        />
+        <img
+          srcset="@images/svg/icon-down_arrow.svg"
+          alt="Language"
+          class="w-5 h-5 hover:opacity-80 transition mt-[1px]"
+        />
+      </div>
+    </div>
+
+
+  </div>
+  <%~ include('/src/views/partials/menu.html') %>
+</header>
+
+<!-- Script toggle dropdown -->
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const dropdown = document.getElementById("searchDropdown");
+
+  searchInput.addEventListener("focus", () => {
+    dropdown.classList.remove("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add("hidden");
+    }
+  });
+</script>

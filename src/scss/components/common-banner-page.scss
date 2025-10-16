@@ -1,0 +1,144 @@
+common-banner-page {
+  display: block;
+  
+  background-color: #FFF9F2;
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+  @media (min-width: 1024px) {
+    padding-bottom: 80px;
+  }
+  @media (min-width: 1280px) {
+    padding-bottom: 100px;
+  }
+  @media (min-width: 1360px) {
+    padding-bottom: 120px;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media (min-width: 768px) {
+      flex-direction: row;
+
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    @media (min-width: 1280px) {
+      align-items: center;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+    }
+    @media (min-width: 768px) {
+      gap: 30px;
+      flex: 1;
+      padding-right: 20px;
+    }
+    @media (min-width: 1280px) {
+      gap: 36px;
+    }
+  }
+
+  .image-wrap {
+    @media (min-width: 768px) {
+      width: 44.06779661%;
+    }
+    @media (min-width: 1024px) {
+      width: 48%;
+    }
+    @media (min-width: 1280px) {
+      width: 44.06779661%;
+    }
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .w-pen {
+    position: absolute;
+    z-index: 1;
+    right: -8px;
+    width: 60px;
+    bottom: calc(100% - 3px);
+    @media (min-width: 768px) {
+      right: 0;
+      bottom: calc(100% + 4px);
+    }
+    @media (min-width: 1024px) {
+      right: 5px;
+      bottom: calc(100% + 6px);
+    }
+    @media (min-width: 1280px) {
+      width: 70px;
+      bottom: calc(100% + 8px);
+    }
+    @media (min-width: 1360px) {
+      width: 90px;
+      right: 0;
+    }
+  }
+
+  .w-line {
+    width: 100%;
+    height: auto;
+
+    &.w-desktop {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    &.w-mobile {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .svg-pen {
+    position: absolute;
+    z-index: -1;
+    left: -18px;
+    bottom: -6px;
+    width: 334px;
+    @media (min-width: 768px) {
+      width: 390px;
+      bottom: -8px;
+    }
+    @media (min-width: 1024px) {
+      width: 430px;
+      bottom: -12px;
+    }
+    @media (min-width: 1280px) {
+      width: 500px;
+      left: -29px;
+      bottom: -16px;
+    }
+    @media (min-width: 1360px) {
+      width: 588px;
+      bottom: -23px;
+    }
+  }
+
+  .img {
+    padding-bottom: 69.23076923%;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  }
+}

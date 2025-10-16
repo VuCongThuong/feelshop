@@ -1,0 +1,45 @@
+@tailwind components;
+
+@import "swiper/css/bundle";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@import "./common/base";
+@import "./common/common";
+@import "./common/form";
+@import "./common/link";
+
+@import "./snippets/tmp-toggle";
+@import "./snippets/tabs";
+@import "./snippets/tmp-filters";
+@import "./snippets/radio";
+@import "./snippets/copy";
+@import "./snippets/paging";
+@import "./snippets/facetwp-custom";
+@import "./components/common-details";
+@import "./snippets/swiper-custom-pagination";
+@import "./snippets/popup";
+@import "./components/toast";
+
+@import "./components/footer";
+@tailwind utilities;
+
+.feelshop-section {
+  @apply py-[60px] md:py-[80px] lg:py-[100px] xl:py-[120px];
+}
+
+.--no-padding-top {
+  padding-top: 0 !important;
+}
+
+.--no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.--no-padding-left {
+  padding-left: 0 !important;
+}
+
+.--no-padding-right {
+  padding-right: 0 !important;
+}
+

@@ -1,0 +1,42 @@
+.facetwp-facet {
+	&.facetwp-type-checkboxes {
+		margin-bottom: 24px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		@media (min-width: 768px) {
+			margin-bottom: 32px;
+			gap: 12px;
+		}
+		@media (min-width: 1024px) {
+			margin-bottom: 40px;
+		}
+		@media (min-width: 1280px) {
+			margin-bottom: 60px;
+		}
+
+		.facetwp-checkbox {
+			margin-bottom: 0;
+			background: #F3F4F6;
+	    font-weight: 400;
+	    overflow: hidden;
+	    position: relative;
+	    font-size: 14px;
+	    line-height: 160%;
+	    color: #2563EB;
+	    padding: 6px 12px;
+	    border: 1px solid #F3F4F6;
+	    border-radius: 99999px;
+	    @media (min-width: 1024px) {
+	    	padding: 8px 16px;
+	    	font-size: 16px;
+	    }
+
+	    &.checked {
+	    	color: #FE346E;
+	    	border-color: #FE346E;
+	    	background: white;
+	    }
+		}
+	}
+}

@@ -1,0 +1,80 @@
+label {
+    &.w-category {
+        @apply relative flex cursor-pointer;
+
+        input[type="checkbox"] {
+            @apply absolute opacity-0 left-0 top-0;
+
+            &:checked ~ .txt {
+                &:after {
+
+                    @apply opacity-100
+                }
+            }
+        }
+        
+        .txt {
+            @apply relative z-10 pl-[34px] py-[2px] lg:pl-[40px] lg:py-[3px];
+
+            &:before, &:after {
+                @apply absolute left-0 top-0 rounded-[4px] w-[24px] h-[24px] lg:w-[30px] lg:h-[30px];
+            }
+
+            &:before {
+                content: "";
+                @apply border border-light-grey-900 z-0 ;
+            }
+
+            &:after {
+                font-family: "icomoon" !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                content: '\e905';
+                @apply bg-brand-green-100 text-white-100 z-10 opacity-0 transition-opacity duration-100;
+            }
+        }
+    }
+
+    &.w-size {
+        @apply relative flex cursor-pointer;
+
+        input[type="checkbox"] {
+            @apply absolute opacity-0 left-0 top-0;
+
+            &:checked ~ .txt {
+                @apply bg-brand-green-100 border-brand-green-100 text-white-100
+            }
+        }
+        
+        .txt {
+            @apply relative z-10 px-[14px] py-[9px] border border-light-grey-900 rounded-full;
+        }
+    }
+
+    &.w-search {
+        @apply relative;
+
+        input[type="text"] {
+            @apply w-full px-[12px] py-[9px] lg:px-[20px] lg:py-[12px] border border-solid border-light-grey-500 bg-light-grey-500 rounded-[8px];
+            &:focus {
+                @apply bg-white-100 border-brand-green-100 shadow-input-focus;
+            }
+        }
+
+        .icon-search {
+            @apply w-[20px] h-[20px] text-[18px] lg:h-[24px] lg:w-[24px] lg:text-[20px] pointer-events-none absolute right-[12px] lg:right-[20px] top-1/2 -translate-y-[50%] z-0
+        }
+    }
+}

@@ -1,0 +1,442 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input,
+button,
+select,
+textarea {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-width: 0;
+}
+
+.c-checkbox {
+    position: relative;
+    text-align: left;
+
+    input {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        &:checked + label {
+            &:after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    a {
+        color: #FE346E;
+        text-decoration: underline;
+    }
+
+    label {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        padding-top: 3px;
+        padding-left: 36px;
+        font-size: 14px;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+        }
+
+        &:before {
+            background: #FFFFFF;
+            border: 1px solid #B3172F;
+        }
+
+        &:after {
+            content: "\e902";
+            speak: never;
+            -webkit-font-feature-settings: normal;
+            font-feature-settings: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            font-family: icomoon!important;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            justify-content: center;
+            line-height: 1;
+            text-transform: none;
+
+            color: white;
+            font-size: 8px;
+            opacity: 0;
+            visibility: hidden;
+
+            background-color: #FE346E;
+
+            transition: opacity .3s, visibility .3s;
+        }
+    }
+    input {
+        &.w-error{
+            + label{
+                &:before {
+                }
+            }
+        }
+    }
+}
+
+.c-form-control {
+    font-size: var(--input-font-size, 14px);
+    line-height: var(--input-line-height, 20px);
+    padding-top: var(--input-padding-top, 13px);
+    padding-bottom: var(--input-padding-bottom, 13px);
+    padding-left: var(--input-padding-left, 16px);
+    padding-right: var(--input-padding-right, 16px);
+    background-color: var(--input-background-color, #fff);
+    width: 100%;
+    border: 1px solid var(--input-border-color, #E5E7EB);
+    border-radius: var(--input-border-radius, 8px);
+    transition: border-color .28s, box-shadow .28s, background-color .28s;
+    @media (min-width: 1025px) {
+        --input-font-size: 16px;
+        --input-padding-top: 18px;
+        --input-padding-bottom: 18px;
+        --input-padding-left: 20px;
+        --input-padding-right: 20px;
+        --input-border-radius: 12px;
+    }
+
+    &:focus, &.w-filled {
+    }
+
+    &.w-error {
+        background-color: #FEF2F2;
+        border-color: #FAC7C7;
+    }
+
+    &[disabled] {
+        background-color: #F4F4F5;
+        border-color: #F4F4F5;
+        box-shadow: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: var(--input-placeholder-color, rgba(39, 6, 60, .5)) !important;
+    }
+
+    &:-moz-placeholder {
+        color: var(--input-placeholder-color, rgba(39, 6, 60, .5)) !important;
+    }
+
+    &::-moz-placeholder {
+        color: var(--input-placeholder-color, rgba(39, 6, 60, .5)) !important;
+    }
+
+    &:-ms-input-placeholder {
+        color: var(--input-placeholder-color, rgba(39, 6, 60, .5)) !important;
+    }
+}
+
+.c-select {
+    font-size: var(--input-font-size, 14px);
+    line-height: var(--input-line-height, 20px);
+    padding-top: var(--input-padding-top, 10px);
+    padding-bottom: var(--input-padding-bottom, 10px);
+    padding-left: var(--input-padding-left, 16px);
+    padding-right: var(--input-padding-right, 16px);
+    background-color: var(--input-background-color, #fff);
+    width: 100%;
+    border-radius: var(--input-border-radius, 99999px);
+    transition: border-color .28s, box-shadow .28s, background-color .28s;
+
+    background-image: url('@images/navigate_down.svg');
+    background-size: 14px auto;
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+
+    @media (min-width: 1025px) {
+        --input-font-size: 16px;
+        --input-padding-top: 18px;
+        --input-padding-bottom: 18px;
+        --input-padding-left: 20px;
+        --input-padding-right: 20px;
+        --input-border-radius: 12px;
+    }
+
+    &:focus, &.w-filled {
+    }
+
+    &.w-error {
+        background-color: #FEF2F2;
+        border-color: #FAC7C7;
+    }
+
+    &[disabled] {
+        background-color: #F4F4F5;
+        border-color: #F4F4F5;
+        box-shadow: none;
+    }
+}
+
+
+.gform-theme--foundation {
+    .gform_fields {
+        display: grid;
+    }
+    
+    .gform_fields {
+        row-gap: 12px;
+        @media (min-width: 768px) {
+            row-gap: 16px;
+        }
+        @media (min-width: 1280px) {
+            row-gap: 20px;
+        }
+    }
+
+    .gform_heading {
+        margin-bottom: 16px;
+        @media (min-width: 768px) {
+            margin-bottom: 24px;
+        }
+        @media (min-width: 1280px) {
+            margin-bottom: 32px;
+        }
+    }
+    .gform_title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 140%;
+        font-weight: 700;
+        
+        @media (min-width: 1024px) {
+            letter-spacing: -0.02em;
+            font-size: 28px;
+        }
+
+        @media (min-width: 1280px) {
+            font-size: 32px;
+        }
+
+        @media (min-width: 1360px) {
+            font-size: 36px;
+        }
+    }
+
+    .gform-field-label {
+        display: block;
+        font-size: 14px;
+        line-height: 160%;
+        font-weight: 600;
+        color: #2563EB;
+        margin-bottom: 8px;
+        @media (min-width: 1024px) {
+            font-size: 16px;
+        }
+    }
+
+    .ginput_container {
+        input[type="text"], input[type="tel"], input[type="email"] {
+            font-size: var(--input-font-size, 14px);
+            line-height: var(--input-line-height, 20px);
+            padding-top: var(--input-padding-top, 13px);
+            padding-bottom: var(--input-padding-bottom, 13px);
+            padding-left: var(--input-padding-left, 16px);
+            padding-right: var(--input-padding-right, 16px);
+            background-color: var(--input-background-color, #fff);
+            width: 100%;
+            border: 1px solid var(--input-border-color, #D9D9D9);
+            border-radius: var(--input-border-radius, 12px);
+            transition: border-color .28s, box-shadow .28s, background-color .28s;
+            height: auto;
+            @media (min-width: 1025px) {
+                --input-font-size: 16px;
+                --input-padding-top: 18px;
+                --input-padding-bottom: 18px;
+                --input-padding-left: 16px;
+                --input-padding-right: 16px;
+            }
+
+            &:focus, &.w-filled {
+            }
+
+            &.w-error {
+                background-color: #FEF2F2;
+                border-color: #FAC7C7;
+            }
+
+            &[disabled] {
+                background-color: #F4F4F5;
+                border-color: #F4F4F5;
+                box-shadow: none;
+            }
+
+            &::-webkit-input-placeholder {
+                color: var(--primary-color) !important;
+            }
+
+            &:-moz-placeholder {
+                color: var(--primary-color) !important;
+            }
+
+            &::-moz-placeholder {
+                color: var(--primary-color) !important;
+            }
+
+            &:-ms-input-placeholder {
+                color: var(--primary-color) !important;
+            }
+        }
+
+        .gfield_select {
+            font-size: var(--input-font-size, 14px);
+            line-height: var(--input-line-height, 20px);
+            padding-top: var(--input-padding-top, 14px);
+            padding-bottom: var(--input-padding-bottom, 14px);
+            padding-left: var(--input-padding-left, 20px);
+            padding-right: var(--input-padding-right, 20px);
+            background-color: var(--input-background-color, #fff);
+            width: 100%;
+            border: 1px solid var(--input-border-color, #D9D9D9);
+            border-radius: var(--input-border-radius, 12px);
+            transition: border-color .28s, box-shadow .28s, background-color .28s;
+
+            background-image: url('@images/navigate_down.svg');
+            background-size: 16px auto;
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            height: auto;
+
+            @media (min-width: 1025px) {
+                --input-font-size: 16px;
+                --input-padding-top: 17px;
+                --input-padding-bottom: 17px;
+                --input-padding-left: 16px;
+                --input-padding-right: 16px;
+            }
+
+            &:focus, &.w-filled {
+            }
+
+            &.w-error {
+                background-color: #FEF2F2;
+                border-color: #FAC7C7;
+            }
+
+            &[disabled] {
+                background-color: #F4F4F5;
+                border-color: #F4F4F5;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .gform_footer {
+        margin-top: 16px;
+        @media (min-width: 768px) {
+            margin-top: 26px;
+        }
+        @media (min-width: 1280px) {
+            margin-top: 36px;
+        }
+
+        input[type="submit"] {
+            position: relative !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+
+            padding-left: var(--btn-padding-left, 20px) !important;
+            padding-right: var(--btn-padding-right, 20px) !important;
+            padding-top: var(--btn-padding-top, 14px) !important;
+            padding-bottom: var(--btn-padding-bottom, 14px) !important;
+            color: white !important;
+            border: 0 !important;
+            border-radius: var(--btn-radius, 99999px) !important;
+            font-family: var(--heading-font) !important;
+
+            font-size: var(--btn-font-size, 14px) !important;
+            line-height: var(--btn-line-height, 20px) !important;
+            min-width: var(--btn-min-width, 162px) !important;
+            background-color: #FE346E !important;
+            width: 100% !important;
+            box-shadow: 0 4px 16px -8px #a53253 !important;
+            transition: background-color .28s, box-shadow .28s, border-color .28s, color .26s !important;
+
+            @media (min-width: 1025px) {
+                --btn-font-size: 16px !important;
+                --btn-line-height: 24px !important;
+                --btn-padding-top: 18px !important;
+                --btn-padding-bottom: 18px !important;
+                --btn-padding-left: 24px !important;
+                --btn-padding-right: 24px !important;
+            }
+
+            &:hover {
+                @media (min-width: 1025px) {
+                    background-color: lighten(#FE346E, 5%) !important;
+                    box-shadow: 0px 12px 24px -8px rgba(165, 50, 83, 0.5) !important;
+                }
+            }
+
+            &:active {
+                @media (min-width: 1025px) {
+                    background-color: darken(#FE346E, 4%) !important;
+                    box-shadow: none !important;
+                }
+            }
+
+            &:before {
+                content: "";
+                display: block;
+
+            }
+        }
+    }
+}

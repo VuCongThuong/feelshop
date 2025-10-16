@@ -1,0 +1,73 @@
+.inner {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 768px) {
+    max-width: 1380px;
+  }
+}
+
+.img {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+
+  img,
+  picture {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.no-link {
+  cursor: default;
+}
+
+.hide-on-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.hide-on-ipad-and-up {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.no-pd {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-pd-top {
+  padding-top: 0 !important;
+}
+
+.no-pd-bottom {
+  padding-bottom: 0 !important;
+}
+
+/* FAQ Accordion Styles */
+[data-faq-expanded] svg path {
+  d: path("M6 18L18 6M6 6l12 12");
+}
+
+[data-faq-collapsed] svg path {
+  d: path("M12 6v6m0 0v6m0-6h6m-6 0H6");
+}
+
+/* Alternative approach using CSS content */
+[data-faq-expanded] .faq-icon::before {
+  content: "×";
+}
+
+[data-faq-collapsed] .faq-icon::before {
+  content: "+";
+}
