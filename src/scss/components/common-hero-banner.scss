@@ -24,104 +24,6 @@ common-hero-banner {
   z-index: 1;
   display: block;
 
-  .b-logo {
-    & + h1 {
-      margin-top: 12px;
-    }
-  }
-
-  .b-logo {
-    display: inline-flex;
-    border-radius: 99999px;
-    padding: 6px;
-
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.1),
-      inset 2px 2px 2px rgba(0, 0, 0, 0.04);
-    @media (min-width: 1024px) {
-      padding: 8px;
-    }
-
-    svg {
-      width: 58px;
-      height: auto;
-      @media (min-width: 1024px) {
-        width: 81px;
-      }
-    }
-  }
-
-  h1 {
-  }
-
-  .copy {
-    @media (min-width: 768px) {
-      max-width: 80%;
-    }
-  }
-
-  [data-text] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 24px 24px;
-    gap: 16px;
-
-    @media (max-width: 767px) {
-      background: #fafaf5;
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
-    }
-
-    @media (min-width: 768px) {
-      position: absolute;
-      z-index: 1;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      max-width: 706px;
-      transform: translate3d(0, -50%, 0px);
-
-      gap: 20px;
-      padding-left: 30px;
-      padding-right: 0;
-    }
-    @media (min-width: 1024px) {
-      gap: 24px;
-      padding-left: 40px;
-    }
-    @media (min-width: 1280px) {
-      padding-left: 60px;
-    }
-    @media (min-width: 1360px) {
-      padding-left: 86px;
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      left: 0;
-      bottom: 100%;
-      height: 40px;
-      width: 100%;
-      background: linear-gradient(
-        0deg,
-        #fafaf5 0%,
-        rgba(250, 250, 245, 0.899038) 16.35%,
-        rgba(250, 250, 245, 0.795068) 37.02%,
-        rgba(250, 250, 245, 0.696709) 50%,
-        rgba(250, 250, 245, 0.456465) 70.67%,
-        rgba(250, 250, 245, 0) 100%
-      );
-
-      @media (min-width: 768px) {
-        display: none;
-      }
-    }
-  }
-
   .swiper-pagination {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -130,26 +32,11 @@ common-hero-banner {
   .img {
     padding-bottom: 68.571428571%;
 
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
     @media (min-width: 768px) {
-      border-radius: 20px;
       padding-bottom: 52%;
     }
     @media (min-width: 1024px) {
-      border-radius: 24px;
-      padding-bottom: 48.507462686%;
-    }
-  }
-
-  [data-text] {
-    &[data-text-right] {
-      @media (min-width: 768px) {
-        left: auto;
-        right: 0;
-        padding-left: 0;
-        padding-right: 60px;
-      }
+      padding-bottom: 28.5%;
     }
   }
 
