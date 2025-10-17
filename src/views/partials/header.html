@@ -1,20 +1,26 @@
 <header class="w-full bg-white">
-<div class="flex flex-wrap items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-y-2">
+  <div
+    class="flex flex-wrap items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-y-2"
+  >
     <!-- Logo -->
     <a href="/" class="flex items-center">
-      <img srcset="@images/logo.svg" alt="FeelShop Logo" class="h-6 w-[94px] mr-1" />
+      <img
+        srcset="@images/logo.svg"
+        alt="FeelShop Logo"
+        class="h-6 w-[94px] mr-1"
+      />
       <!-- <span class="text-[20px] font-semibold text-[#243A8B] leading-none">
         SHOP
       </span> -->
     </a>
 
     <!-- Ô tìm kiếm -->
-    <div class="relative hidden lg:flex flex-1 max-w-[640px] mx-10">
+    <div class="relative hidden lg:flex flex-1 max-w-[640px] my-2 mx-10">
       <input
         id="searchInput"
         type="text"
         placeholder="Search for an item..."
-        class="w-full rounded-full bg-[#F8F8F8] border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1"
+        class="w-full rounded-full bg-[#F2F2F2] border border-solid border-[#D8D8D8] py-2.5 pl-10 pr-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-1"
       />
       <img
         srcset="@images/icon-search.svg"
@@ -148,10 +154,10 @@
 
     <!-- Nhóm icon -->
     <div class="flex items-center space-x-5 text-[#243A8B]">
-    
       <!-- Đơn hàng -->
       <div class="relative">
         <img
+          id="orderIcon"
           srcset="@images/icon-order.svg"
           alt="Orders"
           class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
@@ -160,25 +166,703 @@
           class="absolute -top-1 -right-2 bg-red-600 text-white text-[10px] font-semibold rounded-full px-[4px]"
           >10</span
         >
+
+        <!-- Notification Popup -->
+        <div
+          id="notificationPopup"
+          class="hidden fixed top-[58px] left-0 right-0 bg-white w-full h-[calc(100vh-16px)] md:left-auto md:right-0 md:w-[450px] md:h-[528px] z-50"
+        >
+          <!-- Header -->
+          <div class="flex items-center justify-between p-4">
+            <h3 class="text-[24px] font-semibold text-[#2D2D2D] leading-[32px]">
+              Notification
+            </h3>
+            <button
+              id="closeNotification"
+              class="w-6 h-6 flex items-center justify-center p-1 rounded-full hover:bg-gray-100 transition"
+              onclick="closeNotificationPopup()"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="#2D2D2D"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Scrollable Content -->
+          <div class="overflow-y-auto h-[calc(100vh-58px-80px)] md:h-[464px]">
+            <!-- Notification Item 1 -->
+            <div
+              class="flex items-start p-4 border-b border-[#F2F2F2] hover:bg-gray-50 cursor-pointer"
+            >
+              <div
+                class="w-[84px] h-[84px] bg-gray-200 rounded-lg mr-4 flex-shrink-0 overflow-hidden"
+              >
+                <img
+                  src="@images/product-phone.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col gap-1">
+                <h4 class="text-[14px] font-semibold text-black leading-[20px]">
+                  🔥 Hot New Releases! 🔥
+                </h4>
+                <p class="text-[12px] text-black leading-[16px]">
+                  Check out the latest cutting-edge devices just added to our
+                  collection! Limited stock available.
+                </p>
+                <p class="text-[10px] text-[#7F7F7F] leading-[14px]">
+                  2 months ago
+                </p>
+              </div>
+            </div>
+
+            <!-- Notification Item 2 -->
+            <div
+              class="flex items-start p-4 border-b border-[#F2F2F2] hover:bg-gray-50 cursor-pointer"
+            >
+              <div
+                class="w-[84px] h-[84px] bg-gray-200 rounded-lg mr-4 flex-shrink-0 overflow-hidden"
+              >
+                <img
+                  src="@images/product-phone.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col gap-1">
+                <h4 class="text-[14px] font-semibold text-black leading-[20px]">
+                  iPhone 16 Just Dropped
+                </h4>
+                <p class="text-[12px] text-black leading-[16px]">
+                  And that means all new Nomad cases & accessories. Shop the
+                  collection now.
+                </p>
+                <p class="text-[10px] text-[#7F7F7F] leading-[14px]">
+                  2 months ago
+                </p>
+              </div>
+            </div>
+
+            <!-- Notification Item 3 (Selected State) -->
+            <div
+              class="flex items-start p-4 border-b border-[#F2F2F2] bg-[#F2F2F2] cursor-pointer"
+            >
+              <div
+                class="w-[84px] h-[84px] bg-gray-200 rounded-lg mr-4 flex-shrink-0 overflow-hidden"
+              >
+                <img
+                  src="@images/product-phone.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col gap-1">
+                <h4 class="text-[14px] font-semibold text-black leading-[20px]">
+                  Offer a Special Deal or Promotion
+                </h4>
+                <p class="text-[12px] text-black leading-[16px]">
+                  Get 10% off or free accessory with your purchase of Iphone 16.
+                  Limited time only!
+                </p>
+                <p class="text-[10px] text-[#7F7F7F] leading-[14px]">
+                  2 months ago
+                </p>
+              </div>
+            </div>
+
+            <!-- Notification Item 4 -->
+            <div
+              class="flex items-start p-4 border-b border-[#F2F2F2] hover:bg-gray-50 cursor-pointer"
+            >
+              <div
+                class="w-[84px] h-[84px] bg-gray-200 rounded-lg mr-4 flex-shrink-0 overflow-hidden"
+              >
+                <img
+                  src="@images/product-phone.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex-1 min-w-0 flex flex-col gap-1">
+                <h4 class="text-[14px] font-semibold text-black leading-[20px]">
+                  🚀 Future of Tech is Here 🚀
+                </h4>
+                <p class="text-[12px] text-black leading-[16px]">
+                  Discover groundbreaking innovations and the most sought-after
+                  gadgets. Be the first to own the future.
+                </p>
+                <p class="text-[10px] text-[#7F7F7F] leading-[14px]">
+                  2 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Người dùng -->
-      <img
-        srcset="@images/icon-user.svg"
-        alt="User"
-        class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
-      />
+      <div class="relative">
+        <img
+          id="userIcon"
+          srcset="@images/icon-user.svg"
+          alt="User"
+          class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
+        />
+
+        <!-- User Dropdown Menu -->
+        <div
+          id="userDropdown"
+          class="hidden fixed top-[58px] left-0 right-0 bg-white shadow-lg z-50 w-full h-[calc(100vh-16px)] px-5 md:left-auto md:right-0 md:w-[200px] md:h-auto md:absolute md:top-10"
+          style="box-shadow: 0px 10px 36px 0px rgba(0, 0, 0, 0.1)"
+        >
+          <!-- Header Section -->
+          <div class="flex justify-between items-center gap-2 py-3 h-[52px]">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="#3449B7"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                  />
+                </svg>
+              </div>
+              <div class="flex items-center justify-center py-1">
+                <span class="text-sm font-normal text-black leading-5"
+                  >Account</span
+                >
+              </div>
+            </div>
+            <button
+              id="closeUserDropdown"
+              class="w-6 h-6 flex md:hidden items-center justify-center"
+              onclick="closeUserDropdownPopup()"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="#2D2D2D"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Menu Items -->
+          <div class="w-full flex-1 overflow-y-auto">
+            <!-- Profile (Active) -->
+            <div
+              class="flex items-center gap-2.5 px-4 py-2.5 bg-blue-50 rounded"
+            >
+              <span class="text-sm font-normal text-blue-600 leading-5"
+                >Profile</span
+              >
+            </div>
+
+            <!-- Order History -->
+            <div
+              class="flex items-center gap-2.5 px-4 py-2.5 rounded cursor-pointer hover:bg-gray-50"
+            >
+              <span class="text-sm font-normal text-slate-800 leading-5"
+                >Order History</span
+              >
+            </div>
+
+            <!-- Address -->
+            <div
+              class="flex items-center gap-2.5 px-4 py-2.5 rounded cursor-pointer hover:bg-gray-50"
+            >
+              <span class="text-sm font-normal text-slate-800 leading-5"
+                >Address</span
+              >
+            </div>
+
+            <!-- Logout -->
+            <div
+              class="flex items-center gap-2.5 px-4 py-2.5 rounded cursor-pointer hover:bg-red-50"
+            >
+              <span class="text-sm font-normal text-red-600 leading-5"
+                >Logout</span
+              >
+              <div class="w-4 h-4 flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_551_91758)">
+                    <path
+                      d="M9.33333 5.33317V3.99984C9.33333 3.64622 9.19286 3.30708 8.94281 3.05703C8.69276 2.80698 8.35362 2.6665 8 2.6665H3.33333C2.97971 2.6665 2.64057 2.80698 2.39052 3.05703C2.14048 3.30708 2 3.64622 2 3.99984V11.9998C2 12.3535 2.14048 12.6926 2.39052 12.9426C2.64057 13.1927 2.97971 13.3332 3.33333 13.3332H8C8.35362 13.3332 8.69276 13.1927 8.94281 12.9426C9.19286 12.6926 9.33333 12.3535 9.33333 11.9998V10.6665"
+                      stroke="#E20919"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4.66699 8H14.0003M14.0003 8L12.0003 6M14.0003 8L12.0003 10"
+                      stroke="#E20919"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_551_91758">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Tin nhắn -->
-      <img
-        srcset="@images/icon-message.svg"
-        alt="Messages"
-        class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
-      />
+      <div class="relative">
+        <img
+          id="messageIcon"
+          srcset="@images/icon-message.svg"
+          alt="Messages"
+          class="hidden md:block w-6 h-6 cursor-pointer hover:opacity-80 transition"
+        />
+        <svg
+          id="searchIconMobile"
+          class="block md:hidden w-6 h-6 cursor-pointer hover:opacity-80 transition"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_3565_46789)">
+            <path
+              d="M3 10C3 10.9193 3.18106 11.8295 3.53284 12.6788C3.88463 13.5281 4.40024 14.2997 5.05025 14.9497C5.70026 15.5998 6.47194 16.1154 7.32122 16.4672C8.1705 16.8189 9.08075 17 10 17C10.9193 17 11.8295 16.8189 12.6788 16.4672C13.5281 16.1154 14.2997 15.5998 14.9497 14.9497C15.5998 14.2997 16.1154 13.5281 16.4672 12.6788C16.8189 11.8295 17 10.9193 17 10C17 9.08075 16.8189 8.1705 16.4672 7.32122C16.1154 6.47194 15.5998 5.70026 14.9497 5.05025C14.2997 4.40024 13.5281 3.88463 12.6788 3.53284C11.8295 3.18106 10.9193 3 10 3C9.08075 3 8.1705 3.18106 7.32122 3.53284C6.47194 3.88463 5.70026 4.40024 5.05025 5.05025C4.40024 5.70026 3.88463 6.47194 3.53284 7.32122C3.18106 8.1705 3 9.08075 3 10Z"
+              stroke="#3449B7"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21 21L15 15"
+              stroke="#3449B7"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_3565_46789">
+              <rect width="24" height="24" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+
+        <!-- Mobile Search Dropdown -->
+        <div
+          id="mobileSearchDropdown"
+          class="hidden fixed top-[58px] left-0 right-0 bg-white shadow-lg z-50 w-full h-[calc(100vh-16px)] md:hidden flex flex-col"
+          style="box-shadow: 0px 10px 36px 0px rgba(0, 0, 0, 0.1)"
+        >
+          <!-- Search Input Section -->
+          <div class="bg-[#F2F2F2] p-2">
+            <div class="flex items-center gap-1 bg-white rounded-lg px-3 py-2">
+              <svg
+                class="w-5 h-5 text-[#808080]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search for an item..."
+                class="flex-1 text-[14px] text-[#808080] bg-transparent border-none outline-none"
+              />
+              <button
+                id="closeMobileSearch"
+                class="w-6 h-6 flex items-center justify-center"
+                onclick="closeMobileSearchPopup()"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="#2D2D2D"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Search Results -->
+          <div class="flex-1 overflow-y-auto p-5 bg-white">
+            <!-- Category Suggestions -->
+            <div class="space-y-1 mb-4">
+              <div class="flex items-center gap-2 p-1">
+                <span class="text-[10px] text-[#808080] leading-[14px]"
+                  >Category</span
+                >
+                <span
+                  class="text-[14px] font-semibold text-[#0F172A] leading-[20px]"
+                  >iPhone</span
+                >
+              </div>
+              <div class="flex items-center gap-2 p-1">
+                <span class="text-[10px] text-[#808080] leading-[14px]"
+                  >Category</span
+                >
+                <span class="text-[14px] text-[#0F172A] leading-[20px]"
+                  >iPhone 15</span
+                >
+              </div>
+              <div class="flex items-center gap-2 p-1">
+                <span class="text-[10px] text-[#808080] leading-[14px]"
+                  >Category</span
+                >
+                <span class="text-[14px] text-[#0F172A] leading-[20px]"
+                  >iPhone 14</span
+                >
+              </div>
+              <div class="flex items-center gap-2 p-1">
+                <span class="text-[10px] text-[#808080] leading-[14px]"
+                  >Category</span
+                >
+                <span class="text-[14px] text-[#0F172A] leading-[20px]"
+                  >iPhone 13</span
+                >
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-[#EBEDF8] my-4"></div>
+
+            <!-- Product Results -->
+            <div class="space-y-2">
+              <!-- Product Item 1 -->
+              <div
+                class="flex items-center gap-2 p-2 bg-white rounded cursor-pointer hover:bg-gray-50"
+              >
+                <div class="w-12 h-12 bg-[#D9D9D9] rounded flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[14px] text-black leading-[24px]">
+                      iPhone 14 Silicone
+                    </h4>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span
+                      class="px-2 py-1 bg-[rgba(233,14,18,0.1)] text-[10px] font-semibold text-[#E90E12] uppercase rounded"
+                      >Sales</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-[rgba(20,184,166,0.1)] text-[10px] font-semibold text-[#14B8A6] uppercase rounded"
+                      >In-stock</span
+                    >
+                  </div>
+                  <p class="text-[12px] text-[#808080] leading-[16px]">
+                    SKU : 87643
+                  </p>
+                  <div class="flex items-end gap-2 mt-1">
+                    <span class="text-[12px] text-[#808080] leading-[16px]"
+                      >25,739,000đ</span
+                    >
+                    <span
+                      class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >24,999,000đ</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Item 2 -->
+              <div
+                class="flex items-center gap-2 p-2 bg-white rounded cursor-pointer hover:bg-gray-50"
+              >
+                <div class="w-12 h-12 bg-[#D9D9D9] rounded flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[14px] text-black leading-[24px]">
+                      iPhone 14 Screen Protector
+                    </h4>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span
+                      class="px-2 py-1 bg-[rgba(233,14,18,0.1)] text-[10px] font-semibold text-[#E90E12] uppercase rounded"
+                      >Sales</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-[rgba(20,184,166,0.1)] text-[10px] font-semibold text-[#14B8A6] uppercase rounded"
+                      >In-stock</span
+                    >
+                  </div>
+                  <p class="text-[12px] text-[#808080] leading-[16px]">
+                    SKU : 8962
+                  </p>
+                  <div class="flex items-end gap-2 mt-1">
+                    <span
+                      class="text-[12px] font-semibold text-[#3449B7] leading-[16px]"
+                      >999,000</span
+                    >
+                    <span
+                      class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >799,000đ</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Item 3 (Selected) -->
+              <div
+                class="flex items-center gap-2 p-2 bg-[#F2F2F2] rounded cursor-pointer"
+              >
+                <div class="w-12 h-12 bg-[#D9D9D9] rounded flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[14px] text-black leading-[24px]">
+                      iPhone 15
+                    </h4>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span
+                      class="px-2 py-1 bg-[rgba(233,14,18,0.1)] text-[10px] font-semibold text-[#E90E12] uppercase rounded"
+                      >Sales</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-[rgba(20,184,166,0.1)] text-[10px] font-semibold text-[#14B8A6] uppercase rounded"
+                      >In-stock</span
+                    >
+                  </div>
+                  <p class="text-[12px] text-[#808080] leading-[16px]">
+                    SKU : 76438
+                  </p>
+                  <div class="flex items-end gap-2 mt-1">
+                    <span class="text-[12px] text-[#808080] leading-[16px]"
+                      >25,739,000đ</span
+                    >
+                    <span
+                      class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >24,999,000đ</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Item 4 -->
+              <div
+                class="flex items-center gap-2 p-2 bg-white rounded cursor-pointer hover:bg-gray-50"
+              >
+                <div class="w-12 h-12 bg-[#D9D9D9] rounded flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[14px] text-black leading-[24px]">
+                      iPhone 14 Pro
+                    </h4>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span
+                      class="px-2 py-1 bg-[rgba(233,14,18,0.1)] text-[10px] font-semibold text-[#E90E12] uppercase rounded"
+                      >Sales</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-[rgba(20,184,166,0.1)] text-[10px] font-semibold text-[#14B8A6] uppercase rounded"
+                      >In-stock</span
+                    >
+                  </div>
+                  <p class="text-[12px] text-[#808080] leading-[16px]">
+                    SKU : 85341
+                  </p>
+                  <div class="flex items-end gap-2 mt-1">
+                    <span class="text-[12px] text-[#808080] leading-[16px]"
+                      >25,739,000đ</span
+                    >
+                    <span
+                      class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >24,999,000đ</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Item 5 -->
+              <div
+                class="flex items-center gap-2 p-2 bg-white rounded cursor-pointer hover:bg-gray-50"
+              >
+                <div class="w-12 h-12 bg-[#D9D9D9] rounded flex-shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="text-[14px] text-black leading-[24px]">
+                      iPhone 14 Pro Max 512GB
+                    </h4>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span
+                      class="px-2 py-1 bg-[rgba(233,14,18,0.1)] text-[10px] font-semibold text-[#E90E12] uppercase rounded"
+                      >Sales</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-[rgba(20,184,166,0.1)] text-[10px] font-semibold text-[#14B8A6] uppercase rounded"
+                      >In-stock</span
+                    >
+                  </div>
+                  <p class="text-[12px] text-[#808080] leading-[16px]">
+                    SKU : 974
+                  </p>
+                  <div class="flex items-end gap-2 mt-1">
+                    <span class="text-[12px] text-[#808080] leading-[16px]"
+                      >25,739,000đ</span
+                    >
+                    <span
+                      class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >24,999,000đ</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- View All Results Button -->
+            <div class="mt-4">
+              <button
+                class="w-full bg-white border border-gray-200 rounded-xl px-5 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition"
+              >
+                <span
+                  class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                  >View All Results</span
+                >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="#3449B7"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Popup -->
+        <div
+          id="contactPopup"
+          class="hidden fixed top-[58px] right-0 bg-white shadow-lg z-50 w-full h-[calc(100vh-16px)] md:absolute md:top-10 md:min-w-[231px] md:h-auto md:w-auto"
+          style="box-shadow: 0px 10px 36px 0px rgba(0, 0, 0, 0.1)"
+        >
+          <!-- Header with close button (mobile only) -->
+          <div
+            class="flex justify-between items-center p-4 border-b border-gray-200 md:hidden"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">Contact</h3>
+            <button
+              id="closeContact"
+              class="text-gray-400 hover:text-gray-600 transition"
+              onclick="closeContactPopup()"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Email Section -->
+          <div class="flex items-center gap-2 px-5 py-3">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="#3449B7"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center justify-center py-1">
+              <span class="text-sm font-normal text-black leading-5"
+                >cskh@gmail.com</span
+              >
+            </div>
+          </div>
+
+          <!-- Phone Section -->
+          <div class="flex items-center gap-2 px-5 py-3">
+            <div class="w-6 h-6 flex items-center justify-center">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="#3449B7"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center justify-center py-1">
+              <span class="text-sm font-normal text-black leading-5"
+                >Hotline : 0123456789</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Giỏ hàng -->
       <div class="relative">
         <img
+          id="cartIcon"
           srcset="@images/icon-cart.svg"
           alt="Cart"
           class="w-6 h-6 cursor-pointer hover:opacity-80 transition"
@@ -187,50 +871,1160 @@
           class="absolute -top-1 -right-2 bg-blue-600 text-white text-[10px] font-semibold rounded-full px-[4px]"
           >10</span
         >
+
+        <!-- Cart Popup -->
+        <div
+          id="cartPopup"
+          class="hidden fixed top-[58px] left-0 right-0 bg-white w-full h-[calc(100vh-16px)] md:left-auto md:right-0 md:w-[451px] md:h-[886px] z-50 flex flex-col"
+          style="box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2)"
+        >
+          <!-- Header -->
+          <div class="flex items-center justify-between p-4">
+            <h2 class="text-[24px] font-semibold text-[#2D2D2D] leading-[32px]">
+              Your Cart
+            </h2>
+            <button
+              id="closeCart"
+              class="w-6 h-6 flex items-center justify-center p-1 rounded-full hover:bg-gray-100 transition"
+              onclick="closeCartPopup()"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="#2D2D2D"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Scrollable Content -->
+          <div class="flex-1 overflow-y-auto p-5">
+            <!-- Cart Items -->
+            <div class="space-y-2 mb-5">
+              <!-- Cart Item 1 -->
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                >
+                  <img
+                    src="@images/product-phone.jpg"
+                    alt="iPhone"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-start justify-between mb-1">
+                    <div class="flex-1">
+                      <h4
+                        class="text-[14px] font-semibold text-black leading-[20px]"
+                      >
+                        iPhone 14 Pro Max 256GB
+                      </h4>
+                      <p
+                        class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                      >
+                        Color: Deep Purple
+                      </p>
+                    </div>
+
+                    <div
+                      class="flex items-center border border-[#D8D8D8] rounded"
+                    >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="w-6 text-center text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                        >1</span
+                      >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      class="ml-2 w-6 h-6 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.25 4.5H16.5V3.75C16.5 3.15326 16.2629 2.58097 15.841 2.15901C15.419 1.73705 14.8467 1.5 14.25 1.5H9.75C9.15326 1.5 8.58097 1.73705 8.15901 2.15901C7.73705 2.58097 7.5 3.15326 7.5 3.75V4.5H3.75C3.55109 4.5 3.36032 4.57902 3.21967 4.71967C3.07902 4.86032 3 5.05109 3 5.25C3 5.44891 3.07902 5.63968 3.21967 5.78033C3.36032 5.92098 3.55109 6 3.75 6H4.5V19.5C4.5 19.8978 4.65804 20.2794 4.93934 20.5607C5.22064 20.842 5.60218 21 6 21H18C18.3978 21 18.7794 20.842 19.0607 20.5607C19.342 20.2794 19.5 19.8978 19.5 19.5V6H20.25C20.4489 6 20.6397 5.92098 20.7803 5.78033C20.921 5.63968 21 5.44891 21 5.25C21 5.05109 20.921 4.86032 20.7803 4.71967C20.6397 4.57902 20.4489 4.5 20.25 4.5ZM10.5 15.75C10.5 15.9489 10.421 16.1397 10.2803 16.2803C10.1397 16.421 9.94891 16.5 9.75 16.5C9.55109 16.5 9.36032 16.421 9.21967 16.2803C9.07902 16.1397 9 15.9489 9 15.75V9.75C9 9.55109 9.07902 9.36032 9.21967 9.21967C9.36032 9.07902 9.55109 9 9.75 9C9.94891 9 10.1397 9.07902 10.2803 9.21967C10.421 9.36032 10.5 9.55109 10.5 9.75V15.75ZM15 15.75C15 15.9489 14.921 16.1397 14.7803 16.2803C14.6397 16.421 14.4489 16.5 14.25 16.5C14.0511 16.5 13.8603 16.421 13.7197 16.2803C13.579 16.1397 13.5 15.9489 13.5 15.75V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V15.75ZM15 4.5H9V3.75C9 3.55109 9.07902 3.36032 9.21967 3.21967C9.36032 3.07902 9.55109 3 9.75 3H14.25C14.4489 3 14.6397 3.07902 14.7803 3.21967C14.921 3.36032 15 3.55109 15 3.75V4.5Z"
+                          fill="#FF3333"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-[12px] text-black leading-[16px]">
+                        Total :
+                      </p>
+                      <p
+                        class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >
+                        300.000đ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="border-t border-[#F2F2F2] my-2"></div>
+
+              <!-- Cart Item 2 -->
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                >
+                  <img
+                    src="@images/product-phone.jpg"
+                    alt="iPad"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-start justify-between mb-1">
+                    <div class="flex-1">
+                      <h4
+                        class="text-[14px] font-semibold text-black leading-[20px]"
+                      >
+                        iPad Air (5th Gen) Wi-Fi
+                      </h4>
+                      <p
+                        class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                      >
+                        64GB
+                      </p>
+                    </div>
+
+                    <div
+                      class="flex items-center border border-[#D8D8D8] rounded"
+                    >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="w-6 text-center text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                        >2</span
+                      >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      class="ml-2 w-6 h-6 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.25 4.5H16.5V3.75C16.5 3.15326 16.2629 2.58097 15.841 2.15901C15.419 1.73705 14.8467 1.5 14.25 1.5H9.75C9.15326 1.5 8.58097 1.73705 8.15901 2.15901C7.73705 2.58097 7.5 3.15326 7.5 3.75V4.5H3.75C3.55109 4.5 3.36032 4.57902 3.21967 4.71967C3.07902 4.86032 3 5.05109 3 5.25C3 5.44891 3.07902 5.63968 3.21967 5.78033C3.36032 5.92098 3.55109 6 3.75 6H4.5V19.5C4.5 19.8978 4.65804 20.2794 4.93934 20.5607C5.22064 20.842 5.60218 21 6 21H18C18.3978 21 18.7794 20.842 19.0607 20.5607C19.342 20.2794 19.5 19.8978 19.5 19.5V6H20.25C20.4489 6 20.6397 5.92098 20.7803 5.78033C20.921 5.63968 21 5.44891 21 5.25C21 5.05109 20.921 4.86032 20.7803 4.71967C20.6397 4.57902 20.4489 4.5 20.25 4.5ZM10.5 15.75C10.5 15.9489 10.421 16.1397 10.2803 16.2803C10.1397 16.421 9.94891 16.5 9.75 16.5C9.55109 16.5 9.36032 16.421 9.21967 16.2803C9.07902 16.1397 9 15.9489 9 15.75V9.75C9 9.55109 9.07902 9.36032 9.21967 9.21967C9.36032 9.07902 9.55109 9 9.75 9C9.94891 9 10.1397 9.07902 10.2803 9.21967C10.421 9.36032 10.5 9.55109 10.5 9.75V15.75ZM15 15.75C15 15.9489 14.921 16.1397 14.7803 16.2803C14.6397 16.421 14.4489 16.5 14.25 16.5C14.0511 16.5 13.8603 16.421 13.7197 16.2803C13.579 16.1397 13.5 15.9489 13.5 15.75V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V15.75ZM15 4.5H9V3.75C9 3.55109 9.07902 3.36032 9.21967 3.21967C9.36032 3.07902 9.55109 3 9.75 3H14.25C14.4489 3 14.6397 3.07902 14.7803 3.21967C14.921 3.36032 15 3.55109 15 3.75V4.5Z"
+                          fill="#FF3333"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-[12px] text-black leading-[16px]">
+                        Total :
+                      </p>
+                      <p
+                        class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >
+                        300.000đ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="border-t border-[#F2F2F2] my-2"></div>
+
+              <!-- Cart Item 3 -->
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                >
+                  <img
+                    src="@images/product-phone.jpg"
+                    alt="MacBook"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-start justify-between mb-1">
+                    <div class="flex-1">
+                      <h4
+                        class="text-[14px] font-semibold text-black leading-[20px]"
+                      >
+                        MacBook Pro M2 Pro
+                      </h4>
+                      <p class="text-[12px] text-black leading-[16px]">
+                        14-inch
+                      </p>
+                    </div>
+
+                    <div
+                      class="flex items-center border border-[#D8D8D8] rounded"
+                    >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="w-6 text-center text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                        >2</span
+                      >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      class="ml-2 w-6 h-6 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.25 4.5H16.5V3.75C16.5 3.15326 16.2629 2.58097 15.841 2.15901C15.419 1.73705 14.8467 1.5 14.25 1.5H9.75C9.15326 1.5 8.58097 1.73705 8.15901 2.15901C7.73705 2.58097 7.5 3.15326 7.5 3.75V4.5H3.75C3.55109 4.5 3.36032 4.57902 3.21967 4.71967C3.07902 4.86032 3 5.05109 3 5.25C3 5.44891 3.07902 5.63968 3.21967 5.78033C3.36032 5.92098 3.55109 6 3.75 6H4.5V19.5C4.5 19.8978 4.65804 20.2794 4.93934 20.5607C5.22064 20.842 5.60218 21 6 21H18C18.3978 21 18.7794 20.842 19.0607 20.5607C19.342 20.2794 19.5 19.8978 19.5 19.5V6H20.25C20.4489 6 20.6397 5.92098 20.7803 5.78033C20.921 5.63968 21 5.44891 21 5.25C21 5.05109 20.921 4.86032 20.7803 4.71967C20.6397 4.57902 20.4489 4.5 20.25 4.5ZM10.5 15.75C10.5 15.9489 10.421 16.1397 10.2803 16.2803C10.1397 16.421 9.94891 16.5 9.75 16.5C9.55109 16.5 9.36032 16.421 9.21967 16.2803C9.07902 16.1397 9 15.9489 9 15.75V9.75C9 9.55109 9.07902 9.36032 9.21967 9.21967C9.36032 9.07902 9.55109 9 9.75 9C9.94891 9 10.1397 9.07902 10.2803 9.21967C10.421 9.36032 10.5 9.55109 10.5 9.75V15.75ZM15 15.75C15 15.9489 14.921 16.1397 14.7803 16.2803C14.6397 16.421 14.4489 16.5 14.25 16.5C14.0511 16.5 13.8603 16.421 13.7197 16.2803C13.579 16.1397 13.5 15.9489 13.5 15.75V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V15.75ZM15 4.5H9V3.75C9 3.55109 9.07902 3.36032 9.21967 3.21967C9.36032 3.07902 9.55109 3 9.75 3H14.25C14.4489 3 14.6397 3.07902 14.7803 3.21967C14.921 3.36032 15 3.55109 15 3.75V4.5Z"
+                          fill="#FF3333"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-[12px] text-black leading-[16px]">
+                        Total :
+                      </p>
+                      <p
+                        class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >
+                        300.000đ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="border-t border-[#F2F2F2] my-2"></div>
+
+              <!-- Cart Item 4 -->
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                >
+                  <img
+                    src="@images/product-phone.jpg"
+                    alt="AirPods"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-start justify-between mb-1">
+                    <div class="flex-1">
+                      <h4
+                        class="text-[14px] font-semibold text-black leading-[20px]"
+                      >
+                        Airpods gen 4
+                      </h4>
+                      <p
+                        class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                      >
+                        2025
+                      </p>
+                    </div>
+
+                    <div
+                      class="flex items-center border border-[#D8D8D8] rounded"
+                    >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      </button>
+                      <span
+                        class="w-6 text-center text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                        >2</span
+                      >
+                      <button
+                        class="w-6 h-6 flex items-center justify-center p-1"
+                      >
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="#2D2D2D"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      class="ml-2 w-6 h-6 flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.25 4.5H16.5V3.75C16.5 3.15326 16.2629 2.58097 15.841 2.15901C15.419 1.73705 14.8467 1.5 14.25 1.5H9.75C9.15326 1.5 8.58097 1.73705 8.15901 2.15901C7.73705 2.58097 7.5 3.15326 7.5 3.75V4.5H3.75C3.55109 4.5 3.36032 4.57902 3.21967 4.71967C3.07902 4.86032 3 5.05109 3 5.25C3 5.44891 3.07902 5.63968 3.21967 5.78033C3.36032 5.92098 3.55109 6 3.75 6H4.5V19.5C4.5 19.8978 4.65804 20.2794 4.93934 20.5607C5.22064 20.842 5.60218 21 6 21H18C18.3978 21 18.7794 20.842 19.0607 20.5607C19.342 20.2794 19.5 19.8978 19.5 19.5V6H20.25C20.4489 6 20.6397 5.92098 20.7803 5.78033C20.921 5.63968 21 5.44891 21 5.25C21 5.05109 20.921 4.86032 20.7803 4.71967C20.6397 4.57902 20.4489 4.5 20.25 4.5ZM10.5 15.75C10.5 15.9489 10.421 16.1397 10.2803 16.2803C10.1397 16.421 9.94891 16.5 9.75 16.5C9.55109 16.5 9.36032 16.421 9.21967 16.2803C9.07902 16.1397 9 15.9489 9 15.75V9.75C9 9.55109 9.07902 9.36032 9.21967 9.21967C9.36032 9.07902 9.55109 9 9.75 9C9.94891 9 10.1397 9.07902 10.2803 9.21967C10.421 9.36032 10.5 9.55109 10.5 9.75V15.75ZM15 15.75C15 15.9489 14.921 16.1397 14.7803 16.2803C14.6397 16.421 14.4489 16.5 14.25 16.5C14.0511 16.5 13.8603 16.421 13.7197 16.2803C13.579 16.1397 13.5 15.9489 13.5 15.75V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V15.75ZM15 4.5H9V3.75C9 3.55109 9.07902 3.36032 9.21967 3.21967C9.36032 3.07902 9.55109 3 9.75 3H14.25C14.4489 3 14.6397 3.07902 14.7803 3.21967C14.921 3.36032 15 3.55109 15 3.75V4.5Z"
+                          fill="#FF3333"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <p class="text-[12px] text-black leading-[16px]">
+                        Total :
+                      </p>
+                      <p
+                        class="text-[16px] font-semibold text-[#3449B7] leading-[24px]"
+                      >
+                        300.000đ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buy Together Section -->
+            <div class="bg-[#FAFAFA] border-t border-[#D8D8D8] p-5 -mx-5">
+              <h3
+                class="text-[16px] font-semibold text-[#2D2D2D] leading-[24px] mb-5 text-center"
+              >
+                Buy Together
+              </h3>
+
+              <div class="space-y-2">
+                <!-- Suggested Item 1 -->
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="@images/product-phone.jpg"
+                      alt="Screen Protector"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4
+                      class="text-[14px] font-semibold text-black leading-[20px]"
+                    >
+                      Screen Protector
+                    </h4>
+                    <p
+                      class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                    >
+                      Iphone 14
+                    </p>
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                  </div>
+                  <button
+                    class="px-5 py-2 border border-[#3449B7] text-[#3449B7] rounded-lg hover:bg-blue-50 transition text-[14px] font-semibold leading-[20px]"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-[#F2F2F2] my-2"></div>
+
+                <!-- Suggested Item 2 -->
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="@images/product-phone.jpg"
+                      alt="Wallet Case"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4
+                      class="text-[14px] font-semibold text-black leading-[20px]"
+                    >
+                      Wallet Case
+                    </h4>
+                    <p
+                      class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                    >
+                      Pink
+                    </p>
+                    <p
+                      class="text-[14px] font-semibold text-[#2D2D2D] leading-[20px]"
+                    >
+                      300.000đ
+                    </p>
+                  </div>
+                  <button
+                    class="px-5 py-2 border border-[#3449B7] text-[#3449B7] rounded-lg hover:bg-blue-50 transition text-[14px] font-semibold leading-[20px]"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-[#F2F2F2] my-2"></div>
+
+                <!-- Suggested Item 3 -->
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-20 h-20 bg-[#F0EEED] rounded-lg flex-shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src="@images/product-phone.jpg"
+                      alt="MagSafe Accessories"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4
+                      class="text-[14px] font-semibold text-black leading-[20px]"
+                    >
+                      MagSafe Accessories
+                    </h4>
+                    <p
+                      class="text-[12px] text-[rgba(0,0,0,0.6)] leading-[16px]"
+                    >
+                      XL
+                    </p>
+                    <p
+                      class="text-[12px] font-semibold text-[#2D2D2D] leading-[16px]"
+                    >
+                      300.000đ
+                    </p>
+                  </div>
+                  <button
+                    class="px-5 py-2 border border-[#3449B7] text-[#3449B7] rounded-lg hover:bg-blue-50 transition text-[14px] font-semibold leading-[20px]"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div
+            class="border-t border-[#3449B7] p-4 bg-white"
+            style="box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2)"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[14px] text-[#17183B] leading-[24px]"
+                >TOTAL</span
+              >
+              <span
+                class="text-[24px] font-semibold text-[#3449B7] leading-[20px]"
+                >800.000</span
+              >
+            </div>
+            <div class="flex gap-4">
+              <button
+                class="flex-1 px-5 py-3 border border-[#3449B7] text-[#3449B7] rounded-lg hover:bg-blue-50 transition text-[16px] font-semibold leading-[24px]"
+              >
+                View my cart
+              </button>
+              <button
+                class="flex-1 px-5 py-3 bg-[#3449B7] text-white rounded-lg hover:bg-blue-700 transition text-[16px] font-semibold leading-[24px]"
+              >
+                Go to checkout
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Ngôn ngữ -->
-      <div class="hidden lg:flex items-centers space-x-0.5 cursor-pointer">
-        <img
-          srcset="@images/icon-globe.svg"
-          alt="Language"
-          class="w-6 h-6 hover:opacity-80 transition"
-        />
-        <img
-          srcset="@images/icon-down_arrow.svg"
-          alt="Language"
-          class="w-5 h-5 hover:opacity-80 transition mt-[1px]"
-        />
+      <div class="relative hidden lg:flex">
+        <div
+          id="languageIcon"
+          class="flex items-center space-x-0.5 cursor-pointer"
+        >
+          <img
+            srcset="@images/icon-globe.svg"
+            alt="Language"
+            class="w-6 h-6 hover:opacity-80 transition"
+          />
+          <img
+            id="languageArrow"
+            srcset="@images/icon-down_arrow.svg"
+            alt="Language"
+            class="w-5 h-5 hover:opacity-80 transition-transform duration-200 mt-[1px]"
+          />
+        </div>
+
+        <!-- Language Dropdown Menu -->
+        <div
+          id="languageDropdown"
+          class="hidden absolute top-10 right-0 bg-white shadow-lg p-2 min-w-[152px] z-50"
+        >
+          <div
+            class="pl-8 py-6 text-sm bg-[#EBEDF8] text-gray-800 mb-2 hover:bg-gray-50 cursor-pointer"
+          >
+            English
+          </div>
+          <div
+            class="pl-8 py-6 text-sm text-gray-800 hover:bg-gray-50 cursor-pointer"
+          >
+            Tiếng Việt
+          </div>
+        </div>
       </div>
 
-        <!-- Mobile hamburger button -->
+      <!-- Mobile hamburger button -->
       <button
         id="mobile-menu-button"
         class="md:hidden flex justify-center items-center w-8 h-8 focus:outline-none rounded"
         aria-label="Toggle mobile menu"
       >
-        <img id="hamburger-icon" srcset="@images/icon-hambuger.svg" alt="Open menu" class="w-6 h-6">
-        <img id="close-icon" srcset="@images/icon-close.svg" alt="Close menu" class="w-6 h-6 hidden">
+        <img
+          id="hamburger-icon"
+          srcset="@images/icon-hambuger.svg"
+          alt="Open menu"
+          class="w-6 h-6"
+        />
+        <img
+          id="close-icon"
+          srcset="@images/icon-close.svg"
+          alt="Close menu"
+          class="w-6 h-6 hidden"
+        />
       </button>
     </div>
-
-
   </div>
   <%~ include('/src/views/partials/menu.html') %>
 </header>
 
+<!-- Dropdown Animation Styles -->
+<style>
+  .dropdown-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease-out;
+  }
+
+  .dropdown-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dropdown-exit {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.15s ease-in;
+  }
+
+  .dropdown-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+</style>
+
 <!-- Script toggle dropdown -->
 <script>
+  // Helper functions for smooth dropdown animations
+  function showDropdown(element) {
+    if (!element) return;
+    // Reset display style first
+    element.style.display = "";
+    element.classList.remove("hidden");
+    element.classList.add("dropdown-enter");
+    // Force reflow to ensure the enter class is applied
+    element.offsetHeight;
+    element.classList.add("dropdown-enter-active");
+    element.classList.remove("dropdown-enter");
+  }
+
+  function hideDropdown(element) {
+    if (!element) return;
+    element.classList.add("dropdown-exit");
+    element.classList.add("dropdown-exit-active");
+    element.classList.remove("dropdown-enter-active");
+
+    setTimeout(() => {
+      element.classList.add("hidden");
+      element.classList.remove("dropdown-exit", "dropdown-exit-active");
+    }, 150);
+  }
+
+  // Simple close function for mobile (immediate close without animation)
+  function closePopup(element) {
+    if (!element) {
+      console.log("closePopup: element is null");
+      return;
+    }
+    console.log("closePopup called for:", element.id);
+    console.log("Element before close:", element.className);
+
+    element.classList.add("hidden");
+    element.classList.remove(
+      "dropdown-enter",
+      "dropdown-enter-active",
+      "dropdown-exit",
+      "dropdown-exit-active"
+    );
+
+    console.log("Element after close:", element.className);
+  }
+
+  // Function to restore body scroll
+  function restoreBodyScroll() {
+    document.body.style.overflow = "";
+  }
+
+  // Make functions globally available for onclick attributes
+  window.closePopup = closePopup;
+  window.restoreBodyScroll = restoreBodyScroll;
+
+  // Specific close functions for each popup
+  function closeNotificationPopup() {
+    const popup = document.getElementById("notificationPopup");
+    if (popup) {
+      console.log("closeNotificationPopup called");
+      popup.classList.add("hidden");
+      popup.classList.remove(
+        "dropdown-enter",
+        "dropdown-enter-active",
+        "dropdown-exit",
+        "dropdown-exit-active"
+      );
+    }
+  }
+
+  function closeCartPopup() {
+    const popup = document.getElementById("cartPopup");
+    if (popup) {
+      console.log("closeCartPopup called");
+      popup.classList.add("hidden");
+      popup.classList.remove(
+        "dropdown-enter",
+        "dropdown-enter-active",
+        "dropdown-exit",
+        "dropdown-exit-active"
+      );
+    }
+  }
+
+  function closeContactPopup() {
+    const popup = document.getElementById("contactPopup");
+    if (popup) {
+      console.log("closeContactPopup called");
+      popup.classList.add("hidden");
+      popup.classList.remove(
+        "dropdown-enter",
+        "dropdown-enter-active",
+        "dropdown-exit",
+        "dropdown-exit-active"
+      );
+    }
+  }
+
+  function closeUserDropdownPopup() {
+    const popup = document.getElementById("userDropdown");
+    if (popup) {
+      console.log("closeUserDropdownPopup called");
+      popup.classList.add("hidden");
+      popup.classList.remove(
+        "dropdown-enter",
+        "dropdown-enter-active",
+        "dropdown-exit",
+        "dropdown-exit-active"
+      );
+    }
+  }
+
+  function closeMobileSearchPopup() {
+    const popup = document.getElementById("mobileSearchDropdown");
+    if (popup) {
+      console.log("closeMobileSearchPopup called");
+      popup.classList.add("hidden");
+      popup.classList.remove(
+        "dropdown-enter",
+        "dropdown-enter-active",
+        "dropdown-exit",
+        "dropdown-exit-active"
+      );
+      restoreBodyScroll();
+    }
+  }
+
+  // Make specific functions globally available
+  window.closeNotificationPopup = closeNotificationPopup;
+  window.closeCartPopup = closeCartPopup;
+  window.closeContactPopup = closeContactPopup;
+  window.closeUserDropdownPopup = closeUserDropdownPopup;
+  window.closeMobileSearchPopup = closeMobileSearchPopup;
+
+  // Get all elements first
   const searchInput = document.getElementById("searchInput");
   const dropdown = document.getElementById("searchDropdown");
+  const cartIcon = document.getElementById("cartIcon");
+  const cartPopup = document.getElementById("cartPopup");
+  const closeCart = document.getElementById("closeCart");
+  const orderIcon = document.getElementById("orderIcon");
+  const notificationPopup = document.getElementById("notificationPopup");
+  const closeNotification = document.getElementById("closeNotification");
+  const messageIcon = document.getElementById("messageIcon");
+  const searchIconMobile = document.getElementById("searchIconMobile");
+  const contactPopup = document.getElementById("contactPopup");
+  const closeContact = document.getElementById("closeContact");
+  const mobileSearchDropdown = document.getElementById("mobileSearchDropdown");
+  const closeMobileSearch = document.getElementById("closeMobileSearch");
+  const userIcon = document.getElementById("userIcon");
+  const userDropdown = document.getElementById("userDropdown");
+  const closeUserDropdown = document.getElementById("closeUserDropdown");
+  const languageIcon = document.getElementById("languageIcon");
+  const languageDropdown = document.getElementById("languageDropdown");
+  const languageArrow = document.getElementById("languageArrow");
 
-  searchInput.addEventListener("focus", () => {
-    dropdown.classList.remove("hidden");
-  });
+  // Search input functionality
+  if (searchInput && dropdown) {
+    searchInput.addEventListener("focus", () => {
+      dropdown.classList.remove("hidden");
+    });
+  }
 
+  // Function to handle message icon click (desktop only)
+  function handleMessageClick(e) {
+    e.stopPropagation();
+    // Close other dropdowns with animation
+    hideDropdown(userDropdown);
+    hideDropdown(languageDropdown);
+    hideDropdown(notificationPopup);
+    hideDropdown(cartPopup);
+    hideDropdown(mobileSearchDropdown);
+    // Reset language arrow rotation
+    if (languageArrow) languageArrow.style.transform = "rotate(0deg)";
+    // Toggle message popup with animation
+    if (contactPopup && contactPopup.classList.contains("hidden")) {
+      showDropdown(contactPopup);
+    } else {
+      hideDropdown(contactPopup);
+    }
+  }
+
+  // Function to handle mobile search icon click
+  function handleMobileSearchClick(e) {
+    e.stopPropagation();
+    // Close other dropdowns with animation
+    hideDropdown(userDropdown);
+    hideDropdown(languageDropdown);
+    hideDropdown(notificationPopup);
+    hideDropdown(cartPopup);
+    hideDropdown(contactPopup);
+    // Reset language arrow rotation
+    if (languageArrow) languageArrow.style.transform = "rotate(0deg)";
+    // Toggle mobile search dropdown with animation
+    if (
+      mobileSearchDropdown &&
+      mobileSearchDropdown.classList.contains("hidden")
+    ) {
+      showDropdown(mobileSearchDropdown);
+      // Prevent body scroll when search is open
+      document.body.style.overflow = "hidden";
+    } else {
+      hideDropdown(mobileSearchDropdown);
+      // Restore body scroll when search is closed
+      restoreBodyScroll();
+    }
+  }
+
+  // Add event listeners for both icons
+  if (messageIcon) {
+    messageIcon.addEventListener("click", handleMessageClick);
+  }
+  if (searchIconMobile) {
+    searchIconMobile.addEventListener("click", handleMobileSearchClick);
+  }
+
+  // Cart popup functionality
+  if (cartIcon && cartPopup) {
+    cartIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other dropdowns with animation
+      hideDropdown(contactPopup);
+      hideDropdown(userDropdown);
+      hideDropdown(languageDropdown);
+      hideDropdown(notificationPopup);
+      // Reset language arrow rotation
+      if (languageArrow) languageArrow.style.transform = "rotate(0deg)";
+      // Toggle cart popup with animation
+      if (cartPopup.classList.contains("hidden")) {
+        showDropdown(cartPopup);
+      } else {
+        hideDropdown(cartPopup);
+      }
+    });
+  }
+
+  // Close cart popup when clicking close button
+  if (closeCart && cartPopup) {
+    closeCart.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Cart close button clicked");
+      closePopup(cartPopup);
+    });
+  }
+
+  // Notification popup functionality
+  if (orderIcon && notificationPopup) {
+    orderIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other dropdowns with animation
+      hideDropdown(contactPopup);
+      hideDropdown(userDropdown);
+      hideDropdown(languageDropdown);
+      hideDropdown(cartPopup);
+      // Reset language arrow rotation
+      if (languageArrow) languageArrow.style.transform = "rotate(0deg)";
+      // Toggle notification popup with animation
+      if (notificationPopup.classList.contains("hidden")) {
+        showDropdown(notificationPopup);
+      } else {
+        hideDropdown(notificationPopup);
+      }
+    });
+  }
+
+  // Close notification popup when clicking close button
+  if (closeNotification && notificationPopup) {
+    closeNotification.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Notification close button clicked");
+      closePopup(notificationPopup);
+    });
+  }
+
+  // Close mobile search dropdown when clicking close button
+  if (closeMobileSearch && mobileSearchDropdown) {
+    closeMobileSearch.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Mobile search close button clicked");
+      closePopup(mobileSearchDropdown);
+      // Restore body scroll when search is closed
+      restoreBodyScroll();
+    });
+  }
+
+  // Close contact popup when clicking close button
+  if (closeContact && contactPopup) {
+    closeContact.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Contact close button clicked");
+      closePopup(contactPopup);
+    });
+  }
+
+  // User dropdown functionality
+  if (userIcon && userDropdown) {
+    userIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other dropdowns with animation
+      hideDropdown(contactPopup);
+      hideDropdown(languageDropdown);
+      hideDropdown(notificationPopup);
+      hideDropdown(cartPopup);
+      // Reset language arrow rotation
+      if (languageArrow) languageArrow.style.transform = "rotate(0deg)";
+      // Toggle user dropdown with animation
+      if (userDropdown.classList.contains("hidden")) {
+        showDropdown(userDropdown);
+      } else {
+        hideDropdown(userDropdown);
+      }
+    });
+  }
+
+  // Close user dropdown when clicking close button
+  if (closeUserDropdown && userDropdown) {
+    closeUserDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("User dropdown close button clicked");
+      closePopup(userDropdown);
+    });
+  }
+
+  // Language dropdown functionality
+  if (languageIcon && languageDropdown && languageArrow) {
+    languageIcon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other dropdowns with animation
+      hideDropdown(contactPopup);
+      hideDropdown(userDropdown);
+      hideDropdown(notificationPopup);
+      hideDropdown(cartPopup);
+      // Toggle language dropdown with animation
+      const isHidden = languageDropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        showDropdown(languageDropdown);
+        languageArrow.style.transform = "rotate(180deg)";
+      } else {
+        hideDropdown(languageDropdown);
+        languageArrow.style.transform = "rotate(0deg)";
+      }
+    });
+  }
+
+  // Add direct event listeners for close buttons as backup
   document.addEventListener("click", (e) => {
-    if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.add("hidden");
+    // Handle close buttons with direct target check
+    if (e.target.id === "closeCart" || e.target.closest("#closeCart")) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Cart close clicked - direct");
+      if (cartPopup) closePopup(cartPopup);
+      return;
+    }
+    if (
+      e.target.id === "closeNotification" ||
+      e.target.closest("#closeNotification")
+    ) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Notification close clicked - direct");
+      if (notificationPopup) closePopup(notificationPopup);
+      return;
+    }
+    if (e.target.id === "closeContact" || e.target.closest("#closeContact")) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Contact close clicked - direct");
+      if (contactPopup) closePopup(contactPopup);
+      return;
+    }
+    if (
+      e.target.id === "closeUserDropdown" ||
+      e.target.closest("#closeUserDropdown")
+    ) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("User dropdown close clicked - direct");
+      if (userDropdown) closePopup(userDropdown);
+      return;
+    }
+    if (
+      e.target.id === "closeMobileSearch" ||
+      e.target.closest("#closeMobileSearch")
+    ) {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log("Mobile search close clicked - direct");
+      if (mobileSearchDropdown) closePopup(mobileSearchDropdown);
+      // Restore body scroll when search is closed
+      restoreBodyScroll();
+      return;
+    }
+
+    // Handle click outside
+    if (searchInput && dropdown) {
+      if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add("hidden");
+      }
+    }
+    if (messageIcon && contactPopup) {
+      if (!messageIcon.contains(e.target) && !contactPopup.contains(e.target)) {
+        hideDropdown(contactPopup);
+      }
+    }
+    if (searchIconMobile && mobileSearchDropdown) {
+      if (
+        !searchIconMobile.contains(e.target) &&
+        !mobileSearchDropdown.contains(e.target)
+      ) {
+        hideDropdown(mobileSearchDropdown);
+        // Restore body scroll when search is closed
+        restoreBodyScroll();
+      }
+    }
+    if (userIcon && userDropdown) {
+      if (!userIcon.contains(e.target) && !userDropdown.contains(e.target)) {
+        hideDropdown(userDropdown);
+      }
+    }
+    if (languageIcon && languageDropdown && languageArrow) {
+      if (
+        !languageIcon.contains(e.target) &&
+        !languageDropdown.contains(e.target)
+      ) {
+        hideDropdown(languageDropdown);
+        // Reset arrow rotation when dropdown is closed
+        languageArrow.style.transform = "rotate(0deg)";
+      }
+    }
+    if (orderIcon && notificationPopup) {
+      if (
+        !orderIcon.contains(e.target) &&
+        !notificationPopup.contains(e.target)
+      ) {
+        hideDropdown(notificationPopup);
+      }
+    }
+    if (cartIcon && cartPopup) {
+      if (!cartIcon.contains(e.target) && !cartPopup.contains(e.target)) {
+        hideDropdown(cartPopup);
+      }
     }
   });
 </script>
