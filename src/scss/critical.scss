@@ -1,6 +1,7 @@
 @use "sass:color";
 
 @tailwind base;
+@import './common/fonts.scss';
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';

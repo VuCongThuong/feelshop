@@ -15,7 +15,10 @@ module.exports = {
         extend: {
             boxShadow: {
                 'md': '0px 2px 2px 0px rgba(0, 0, 0, 0.10)'
-            }
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif']
+            },
         }
     }
 };

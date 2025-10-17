@@ -6,7 +6,7 @@
     <%~ include('/src/views/partials/header.html') %>
 
       <common-hero-banner>
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <div class="relative">
             <div class="swiper" data-slider data-pagination="true" data-name="herobanner"
               data-options='{ "spaceBetween": 10, "dots": true }'>
@@ -34,7 +34,7 @@
                 data-name="herobanner"></div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[46%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[46%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="herobanner">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -49,7 +49,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[46%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[46%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="herobanner">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">
@@ -66,16 +66,18 @@
           </div>
         </div>
       </common-hero-banner>
-      <section>
-        <div class="inner">
+      <section class="pb-[20px] md:pb-[40px] lg:pb-[40px]">
+        <div class="inner mobile:!px-0">
           <div class="swiper p-5 bg-[#EBEDF8]" data-slider data-name="bottom-banner" data-options='{ 
-            "slidesPerView": 5,
+            "slidesPerView": 1,
             "spaceBetween": 16,
             "breakpoints": {
                 "768": {
+                    "slidesPerView": 1,
                     "spaceBetween": 16
                 },
                 "1024": {
+                    "slidesPerView": 5,
                     "spaceBetween": 16
                 }
             } }'>
@@ -330,7 +332,7 @@
               </div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="product-category">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -345,7 +347,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="product-category">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">
@@ -364,7 +366,7 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <div class="bg-[#3449B7] p-5 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 mb-5">
             <div class="flex items-center">
               <svg class="w-[37px] h-[36px]" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -393,7 +395,7 @@
                 </defs>
               </svg>
             </div>
-            <div class="flex items-end text-white gap-0 md:gap-4">
+            <div class="flex items-end text-white gap-1 md:gap-4">
               <p class="font-bold text-[20px] leading-[28px]">Ends in :</p>
               <div class="flex items-end gap-4">
                 <div class="text-center">
@@ -424,7 +426,8 @@
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="inner">
           <div class="relative">
             <div class="swiper" data-slider data-name="product-hot-sale" data-options='{ 
               "slidesPerView": 2,
@@ -446,7 +449,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -494,7 +497,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -542,7 +545,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -590,7 +593,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -638,7 +641,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -686,7 +689,7 @@
                       <div class="img pb-[100%] relative">
                         <img src="@images/product-phone.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
                         <span
-                          class="absolute z-10 left-0 top-0 w-full h-full hover:bg-black/[.2] transition-all duration-500"></span>
+                          class="absolute z-10 left-0 top-0 w-full h-full group-hover:bg-black/[.2] transition-all duration-500"></span>
                         <span
                           class="absolute z-10 left-[10px] top-[10px] bg-[#FFC746] text-[#3449] font-inter font-semibold text-[12px] leading-4 py-1 px-[6px]">20%</span>
                       </div>
@@ -731,7 +734,7 @@
               </div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="product-hot-sale">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -746,7 +749,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="product-hot-sale">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">
@@ -765,12 +768,14 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
-          <div class="img pb-[28%] relative">
+        <div class="inner mobile:!px-0">
+          <div class="img pb-[67%] md:pb-[28%] relative">
             <img src="@images/bg-ads1.png?as=webp" loading="lazy" class="object-cover" alt="" />
-            <div class="p-[80px] absolute top-0 left-0 w-full h-full grid grid-cols-1 gap-[17px] z-10 md:w-[50%]">
-              <p class="font-inter font-black text-[36px] leading-[44px] text-[#3449B7] uppercase">Trending Now</p>
-              <p class="text-[14px] leading-[20px] text-[#000000]">
+            <div
+              class="p-5 py-10 md:py-[80px] md:p-[80px] absolute top-0 left-0 w-full h-full md:grid md:grid-cols-1 md:gap-[17px] z-10 md:w-[50%]">
+              <p class="font-inter font-black text-[36px] leading-[44px] text-[#3449B7] uppercase pb-5 md:pb-0">Trending
+                Now</p>
+              <p class="text-[14px] leading-[20px] text-[#000000] pb-5 md:pb-0">
                 Stay ahead of the trend with our top-selling products. These items are trending for a reason!
               </p>
               <div class="flex items-center justify-start gap-3 rounded-[25px] bg-[#3449B7] h-[36px] w-fit">
@@ -961,13 +966,13 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <h3
-            class="text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
+            class="px-5 md:px-0 text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
             Apple</h3>
 
           <div class="grid grid-cols-5 gap-5">
-            <div class="img h-auto relative hidden md:block">
+            <div class="img pb-[36%] md:h-auto relative col-span-5 md:col-span-1">
               <img src="@images/banner-apple.png?as=webp" loading="lazy" class="object-cover" alt="" />
               <div
                 class="absolute z-10 left-0 bottom-0 w-full px-5 py-10 text-center flex flex-col items-center justify-center gap-4">
@@ -979,7 +984,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-4 relative">
+            <div class="px-5 md:px-0 col-span-5 md:col-span-4 relative">
               <div class="swiper" data-slider data-name="product-branch1" data-options='{ 
                 "slidesPerView": 2,
                 "spaceBetween": 16,
@@ -1227,7 +1232,7 @@
                 </div>
               </div>
               <div
-                class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-prev data-name="product-branch1">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_5152)">
@@ -1242,7 +1247,7 @@
                 </svg>
               </div>
               <div
-                class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-next data-name="product-branch1">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_8302)">
@@ -1263,13 +1268,13 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <h3
-            class="text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
+            class="px-5 md:px-0 text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
             Apple</h3>
 
           <div class="grid grid-cols-5 gap-5">
-            <div class="img h-auto relative hidden md:block">
+            <div class="img pb-[36%] md:h-auto relative col-span-5 md:col-span-1">
               <img src="@images/banner-apple.png?as=webp" loading="lazy" class="object-cover" alt="" />
               <div
                 class="absolute z-10 left-0 bottom-0 w-full px-5 py-10 text-center flex flex-col items-center justify-center gap-4">
@@ -1281,7 +1286,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-4 relative">
+            <div class="px-5 md:px-0 col-span-5 md:col-span-4 relative">
               <div class="swiper" data-slider data-name="product-branch2" data-options='{ 
                 "slidesPerView": 2,
                 "spaceBetween": 16,
@@ -1529,7 +1534,7 @@
                 </div>
               </div>
               <div
-                class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-prev data-name="product-branch2">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_5152)">
@@ -1544,7 +1549,7 @@
                 </svg>
               </div>
               <div
-                class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-next data-name="product-branch2">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_8302)">
@@ -1565,13 +1570,13 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <h3
-            class="text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
+            class="px-5 md:px-0 text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
             Apple</h3>
 
           <div class="grid grid-cols-5 gap-5">
-            <div class="img h-auto relative hidden md:block">
+            <div class="img pb-[36%] md:h-auto relative col-span-5 md:col-span-1">
               <img src="@images/banner-apple.png?as=webp" loading="lazy" class="object-cover" alt="" />
               <div
                 class="absolute z-10 left-0 bottom-0 w-full px-5 py-10 text-center flex flex-col items-center justify-center gap-4">
@@ -1583,7 +1588,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-4 relative">
+            <div class="px-5 md:px-0 col-span-5 md:col-span-4 relative">
               <div class="swiper" data-slider data-name="product-branch3" data-options='{ 
                 "slidesPerView": 2,
                 "spaceBetween": 16,
@@ -1831,7 +1836,7 @@
                 </div>
               </div>
               <div
-                class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-prev data-name="product-branch3">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_5152)">
@@ -1846,7 +1851,7 @@
                 </svg>
               </div>
               <div
-                class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-next data-name="product-branch3">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_8302)">
@@ -1867,13 +1872,13 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <h3
-            class="text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
+            class="px-5 md:px-0 text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
             Apple</h3>
 
           <div class="grid grid-cols-5 gap-5">
-            <div class="img h-auto relative hidden md:block">
+            <div class="img pb-[36%] md:h-auto relative col-span-5 md:col-span-1">
               <img src="@images/banner-apple.png?as=webp" loading="lazy" class="object-cover" alt="" />
               <div
                 class="absolute z-10 left-0 bottom-0 w-full px-5 py-10 text-center flex flex-col items-center justify-center gap-4">
@@ -1885,7 +1890,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-4 relative">
+            <div class="px-5 md:px-0 col-span-5 md:col-span-4 relative">
               <div class="swiper" data-slider data-name="product-branch4" data-options='{ 
                 "slidesPerView": 2,
                 "spaceBetween": 16,
@@ -2133,7 +2138,7 @@
                 </div>
               </div>
               <div
-                class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-prev data-name="product-branch4">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_5152)">
@@ -2148,7 +2153,7 @@
                 </svg>
               </div>
               <div
-                class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-next data-name="product-branch4">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_8302)">
@@ -2169,13 +2174,13 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
+        <div class="inner mobile:!px-0">
           <h3
-            class="text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
+            class="px-5 md:px-0 text-[#2D2D2D] font-extrabold leading-[24px] md:leading-[32px] text-[16px] md:text-[24px] after:content-[''] after:block after:w-[100px] after:h-[3px] after:bg-[#3449B7] after:mt-[12px] mb-[20px]">
             Apple</h3>
 
           <div class="grid grid-cols-5 gap-5">
-            <div class="img h-auto relative hidden md:block">
+            <div class="img pb-[36%] md:h-auto relative col-span-5 md:col-span-1">
               <img src="@images/banner-apple.png?as=webp" loading="lazy" class="object-cover" alt="" />
               <div
                 class="absolute z-10 left-0 bottom-0 w-full px-5 py-10 text-center flex flex-col items-center justify-center gap-4">
@@ -2187,7 +2192,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-span-4 relative">
+            <div class="px-5 md:px-0 col-span-5 md:col-span-4 relative">
               <div class="swiper" data-slider data-name="product-branch5" data-options='{ 
                 "slidesPerView": 2,
                 "spaceBetween": 16,
@@ -2435,7 +2440,7 @@
                 </div>
               </div>
               <div
-                class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-prev data-name="product-branch5">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_5152)">
@@ -2450,7 +2455,7 @@
                 </svg>
               </div>
               <div
-                class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+                class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
                 data-slider-next data-name="product-branch5">
                 <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_5001_8302)">
@@ -2491,8 +2496,8 @@
                   }
               } }'>
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2502,8 +2507,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2513,8 +2518,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2524,8 +2529,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2535,8 +2540,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2546,8 +2551,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2557,8 +2562,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2568,8 +2573,8 @@
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="#">
+                <div class="swiper-slide hover:shadow-2xl transition-all duration-300">
+                  <a href="#" class="">
                     <div class="p-5 border border-[#F2F2F2]">
                       <div class="flex justify-center items-center">
                         <img class="w-[80px] h-[80px]" src="@images/headphone.png?as=webp" loading="lazy"
@@ -2582,7 +2587,7 @@
               </div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="In-Demand-Category">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -2597,7 +2602,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[35%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="In-Demand-Category">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">
@@ -2915,7 +2920,7 @@
               </div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="Trending At The Moment">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -2930,7 +2935,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="Trending At The Moment">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">
@@ -2949,13 +2954,15 @@
       </section>
 
       <section class="feelshop-section">
-        <div class="inner">
-          <div class="img pb-[28%] relative">
+        <div class="inner mobile:!px-0">
+          <div class="img pb-[68%] md:pb-[28%] relative">
             <img src="@images/banner-ads2.jpg?as=webp" loading="lazy" class="object-cover" alt="" />
-            <div class="p-[80px] absolute top-0 left-0 w-full h-full grid grid-cols-1 gap-[17px] z-10 text-center">
-              <p class="font-inter font-black text-[36px] leading-[44px] text-[#3449B7] uppercase">Last Chance for Big
+            <div
+              class="p-5 py-10 md:py-[80px] md:p-[80px] absolute top-0 left-0 w-full h-full md:grid md:grid-cols-1 md:gap-[17px] z-10 text-center">
+              <p class="font-inter font-black text-[36px] leading-[44px] text-[#3449B7] uppercase pb-5 md:pb-0">Last
+                Chance for Big
                 Savings!</p>
-              <div class="max-w-[300px] m-auto">
+              <div class="md:max-w-[300px] m-auto pb-5 md:pb-0">
                 <p class="text-[14px] leading-[20px] text-[#000000]">
                   Stay ahead of the trend with our top-selling products. These items are trending for a reason!
                 </p>
@@ -3073,7 +3080,7 @@
               </div>
             </div>
             <div
-              class="absolute z-30 left-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 left-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-prev data-name="Discover Service">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_5152)">
@@ -3088,7 +3095,7 @@
               </svg>
             </div>
             <div
-              class="absolute z-30 right-[-20px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
+              class="absolute z-30 right-[-18px] top-[25%] bg-[#3449B7] rounded-full p-2 w-[36px] h-[36px] flex items-center justify-center cursor-pointer"
               data-slider-next data-name="Discover Service">
               <svg class="w-[20px] h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_5001_8302)">

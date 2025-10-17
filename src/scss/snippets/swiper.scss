@@ -112,6 +112,13 @@
     &.swiper-button-disabled {
         pointer-events: none;
         background-color: #CCD1ED;
+        opacity: 1;
+    }  
+}
+@media (max-width: 768px) {
+    [data-slider-prev],
+    [data-slider-next] {
+        display: none;
         opacity: 0;
     }
 }
